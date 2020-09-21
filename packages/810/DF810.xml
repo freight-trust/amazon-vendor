@@ -1,0 +1,96 @@
+<TransactionSet>
+	<TX-00401-810 type="TransactionSet">
+		<Meta>
+		<ST01>810</ST01>
+		<ST02>3377</ST02>
+		</Meta>
+		<BIG type="Segment">
+			<BIG01>20150731</BIG01>
+			<BIG02>9009421628</BIG02>
+			<BIG03>20150731</BIG03>
+			<BIG04 xsi:nil="true" />
+			<BIG05 xsi:nil="true" />
+			<BIG06 xsi:nil="true" />
+			<BIG07>CI</BIG07>
+		</BIG>
+		<CUR type="Segment">
+			<CUR01>BT</CUR01>
+			<CUR02>USD</CUR02>
+		</CUR>
+		<N1Loop1 type="Loop">
+			<N1 type="Segment">
+				<N101>RI</N101>
+				<N102>ABC COMPANY</N102>
+				<N103>92</N103>
+				<N104>ABCD8</N104>
+			</N1>
+			<N2 type="Segment">
+				<N201>ABC Company</N201>
+			</N2>
+			<N3 type="Segment">
+				<N301>PO BOX 911111</N301>
+			</N3>
+			<N4 type="Segment">
+				<N401>DALLAS</N401>
+				<N402>TX</N402>
+				<N403>72345677</N403>
+				<N404>US</N404>
+			</N4>
+		</N1Loop1>
+		<N1Loop1 type="Loop">
+			<N1 type="Segment">
+				<N101>SF</N101>
+				<N102>WHSE</N102>
+				<N103>92</N103>
+				<N104>WHSE</N104>
+			</N1>
+		</N1Loop1>
+		<ITD type="Segment">
+			<ITD01></ITD01>
+			<ITD02></ITD02>
+			<ITD03></ITD03>
+			<ITD04></ITD04>
+			<ITD05></ITD05>
+			<ITD06></ITD06>
+			<ITD07></ITD07>
+			<ITD08></ITD08>
+			<ITD09></ITD09>
+			<ITD10></ITD10>
+			<ITD11></ITD11>
+			<ITD12></ITD12>
+		</ITD>
+		<IT1Loop1 type="Loop">
+			<IT1 type="Segment">
+				<IT101>1</IT101>
+				<IT102>1</IT102>
+				<IT103>EA</IT103>
+				<IT104>6.35</IT104>
+				<IT105>NT</IT105>
+				<IT106>SK</IT106>
+				<IT107>18</IT107>
+				<IT108>PO</IT108>
+				<IT109>D00008lpN</IT109>
+				<IT110>VO</IT110>
+				<IT111>0011556617</IT111>
+				<IT112>ON</IT112>
+				<IT113>000-1111447-6745811</IT113>
+			</IT1>
+			<SACLoop1 type="Loop">
+				<SAC type="Segment">
+					<SAC01>C</SAC01>
+					<SAC02>D500</SAC02>
+					<SAC03 />
+					<SAC04 xsi:nil="true" />
+					<SAC05>19200</SAC05>
+				</SAC>
+			</SACLoop1>
+		</IT1Loop1>
+		<TDS type="Segment">
+			<TDS01>30764</TDS01>
+		</TDS>
+		<CTT type="Segment">
+			<CTT01>48</CTT01>
+			<CTT02>49</CTT02>
+		</CTT>
+	</TX-00401-810>
+</TransactionSet>

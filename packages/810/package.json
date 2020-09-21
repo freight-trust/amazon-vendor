@@ -1,0 +1,19 @@
+{
+  "name": "amazon-810",
+  "version": "0.1.0",
+  "description": "amazon X12 810 Invoice",
+  "author": "sam <sam@freighttrust.com>",
+  "homepage": "https://github.com/freight-trust/",
+  "license": "ISC",
+  "main": "lib/810.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}

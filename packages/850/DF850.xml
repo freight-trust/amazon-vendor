@@ -1,0 +1,190 @@
+<Interchange Delimiters=":*. ^~" xmlns="http://freighttrust.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Meta>
+  <ISA01>00</ISA01>
+  <ISA02> </ISA02>
+  <ISA03>00</ISA03>
+  <ISA04> </ISA04>
+  <ISA05>ZZ</ISA05>
+  <ISA06>AMAZONDS </ISA06>
+  <ISA07>ZZ</ISA07>
+  <ISA08>TESTID </ISA08>
+  <ISA09>190411</ISA09>
+  <ISA10>1310</ISA10>
+  <ISA11>U</ISA11>
+  <ISA12>00401</ISA12>
+  <ISA13>000000043</ISA13>
+  <ISA14>1</ISA14>
+  <ISA15>T</ISA15>
+  <ISA16>:</ISA16>
+  </Meta>
+  <FunctionalGroup>
+    <Meta>
+    <GS01>PO</GS01>
+    <GS02>AMAZONDS</GS02>
+    <GS03>TESTID</GS03>
+    <GS04>20190411</GS04>
+    <GS05>131004</GS05>
+    <GS06>43</GS06>
+    <GS07>X</GS07>
+    <GS08>004010</GS08>
+    </Meta>
+    <TransactionSet>
+      <TX-00401-850 type="TransactionSet">
+        <Meta>
+        <ST01>850</ST01>
+        <ST02>0010</ST02>
+        </Meta>
+        <BEG type="Segment">
+          <BEG01>00</BEG01>
+          <BEG02>DS</BEG02>
+          <BEG03>TesT0008596</BEG03>
+          <BEG04 xsi:nil="true" />
+          <BEG05>20190411</BEG05>
+        </BEG>
+        <CUR type="Segment">
+          <CUR01>BT</CUR01>
+          <CUR02>USD</CUR02>
+        </CUR>
+        <REF type="Segment">
+          <REF01>OQ</REF01>
+          <REF02>100-0000000-3091800</REF02>
+        </REF>
+        <REF type="Segment">
+          <REF01>ST</REF01>
+          <REF02>1</REF02>
+        </REF>
+        <DTM type="Segment">
+          <DTM01>010</DTM01>
+          <DTM02>20190411</DTM02>
+          <DTM03>1200</DTM03>
+          <DTM04>GM</DTM04>
+        </DTM>
+        <DTM type="Segment">
+          <DTM01>002</DTM01>
+          <DTM02>20190411</DTM02>
+          <DTM03>1200</DTM03>
+          <DTM04>GM</DTM04>
+        </DTM>
+        <N9Loop1 type="Loop">
+          <N9 type="Segment">
+            <N901>ZZ</N901>
+            <N902>01</N902>
+          </N9>
+          <MSG type="Segment">
+            <MSG01>This shipment completes your order.</MSG01>
+          </MSG>
+        </N9Loop1>
+        <N1Loop1 type="Loop">
+          <N1 type="Segment">
+            <N101>BT</N101>
+            <N102>Amazon.com.kydc,Inc.</N102>
+            <N103>92</N103>
+            <N104>KYDC</N104>
+          </N1>
+        </N1Loop1>
+        <N1Loop1 type="Loop">
+          <N1 type="Segment">
+            <N101>SF</N101>
+            <N102>ABCD</N102>
+            <N103>92</N103>
+            <N104>ABCD</N104>
+          </N1>
+        </N1Loop1>
+        <N1Loop1 type="Loop">
+          <N1 type="Segment">
+            <N101>ST</N101>
+            <N102>Walter White</N102>
+          </N1>
+          <N2 type="Segment">
+            <N201>HEISENBERG</N201>
+          </N2>
+          <N3 type="Segment">
+            <N301>3828 Piermont Dr NE</N301>
+          </N3>
+          <N4 type="Segment">
+            <N401>Albuquerque</N401>
+            <N402>NM</N402>
+            <N403>87111</N403>
+            <N404>US</N404>
+            <N405>CC</N405>
+            <N406>United States</N406>
+          </N4>
+          <TD5 type="Segment">
+            <TD501 />
+            <TD502>92</TD502>
+            <TD503>UPS_DOM_3DAY_RES</TD503>
+            <TD504 />
+            <TD505 xsi:nil="true" />
+            <TD506 />
+            <TD507>ZZ</TD507>
+            <TD508>RES</TD508>
+          </TD5>
+        </N1Loop1>
+        <N1Loop1 type="Loop">
+          <N1 type="Segment">
+            <N101>LW</N101>
+            <N102>Gus Fring</N102>
+          </N1>
+          <N2 type="Segment">
+            <N201>Darla Hopkins</N201>
+          </N2>
+          <N3 type="Segment">
+            <N301>1213 Jefferson St</N301>
+          </N3>
+          <N4 type="Segment">
+            <N401>Albuquerque</N401>
+            <N402>NM</N402>
+            <N403>87110</N403>
+            <N404>US</N404>
+          </N4>
+          <PER type="Segment">
+            <PER01>ZZ</PER01>
+            <PER02 xsi:nil="true" />
+            <PER03 />
+            <PER04 xsi:nil="true" />
+            <PER05>TE</PER05>
+            <PER06>1212613979</PER06>
+          </PER>
+        </N1Loop1>
+        <PO1Loop1 type="Loop">
+          <PO1 type="Segment">
+            <PO101>1</PO101>
+            <PO102>1</PO102>
+            <PO103>EA</PO103>
+            <PO104>6.35</PO104>
+            <PO105>NT</PO105>
+            <PO106>SK</PO106>
+            <PO107>1110007</PO107>
+            <PO108 />
+            <PO109 xsi:nil="true" />
+            <PO110>TP</PO110>
+            <PO111>Kitchen</PO111>
+            <PO112>BL</PO112>
+            <PO113>1</PO113>
+            <PO114>ZZ</PO114>
+            <PO115>Amazon.com, LLC</PO115>
+          </PO1>
+          <CTPLoop1 type="Loop">
+            <CTP type="Segment">
+              <CTP01 />
+              <CTP02>PUR</CTP02>
+              <CTP03>14.17</CTP03>
+            </CTP>
+          </CTPLoop1>
+          <MSG type="Segment">
+            <MSG01>Designer Mug with Lid, Red</MSG01>
+          </MSG>
+          <MSG type="Segment">
+            <MSG01>Happy Birthday, I hope you enjoy your gift!</MSG01>
+          </MSG>
+        </PO1Loop1>
+        <CTTLoop1 type="Loop">
+          <CTT type="Segment">
+            <CTT01>1</CTT01>
+            <CTT02>1</CTT02>
+          </CTT>
+        </CTTLoop1>
+      </TX-00401-850>
+    </TransactionSet>
+  </FunctionalGroup>
+</Interchange>

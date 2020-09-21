@@ -1,0 +1,386 @@
+[
+  {
+    "name": "TransactionSet",
+    "children": [
+      {
+        "name": "TX-00401-856",
+        "attributes": [{ "name": "type", "value": "TransactionSet" }],
+        "foreach": "/Items/asnorder",
+        "children": [
+          {
+            "name": "Meta",
+            "children": [
+              { "name": "ST01", "value": "856" },
+              {
+                "name": "ST02",
+                "value": { "custom": "[_index | rjust (4,'0')] " }
+              }
+            ]
+          },
+          {
+            "name": "BSN",
+            "attributes": [{ "name": "type", "value": "Segment" }],
+            "children": [
+              { "name": "BSN01", "value": "00" },
+              { "name": "BSN02", "value": { "xpath": "ShipmentId" } },
+              {
+                "name": "BSN03",
+                "value": {
+                  "xpath": "Date",
+                  "formatters": [
+                    {
+                      "name": "todate",
+                      "arguments": ["yyyyMMdd", "yyyy-MM-ddTHHmmsszz"]
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "BSN04",
+                "value": {
+                  "xpath": "Date",
+                  "formatters": [
+                    {
+                      "name": "todate",
+                      "arguments": ["HHmm", "yyyy-MM-ddTHHmmsszz"]
+                    }
+                  ]
+                }
+              },
+              { "name": "BSN05", "value": "ZZZZ" },
+              {
+                "name": "BSN06",
+                "value": {
+                  "script": "<arc:info title=\"Custom Script\" desc=\"The custom script.\">\n  <input name=\"FilePath\"        desc=\"The sending file path.\" />\n  <input name=\"XPath\"           desc=\"The current xpath in the loop.\" />\n  <input name=\"*\"               desc=\"The information of the current loop.\" />\n</arc:info>\n\n<!-- Getting TransactionType value-->\n<arc:set attr=\"data.transactiontype\" value=\"[xpath(TransactionType)]\"/>\n\n<!--Checking Value of TransactionType and Defining the TransactionTypeCode-->\n<arc:select attr=\"data.transactiontype\">\n  <arc:case value=\"Termination\">\n    <arc:set attr=\"data.transactiontypecode\" value=\"72\"/>\n  </arc:case>\n  <arc:case value=\"Shipment Advice\">\n    <arc:set attr=\"data.transactiontypecode\" value=\"AS\"/>\n  </arc:case>\n  <arc:default>\n    <arc:set attr=\"data.transactiontypecode\" value=\"AS\"/>\n  </arc:default>\n</arc:select>\n  \n<arc:set attr=\"result.text\">[data.transactiontypecode]</arc:set>\""
+                }
+              },
+              {
+                "name": "BSN07",
+                "value": "NOR",
+                "condition": {
+                  "operator": "==",
+                  "params": [{ "xpath": "TransactionType" }, "Shipment Advice"]
+                }
+              },
+              {
+                "name": "BSN07",
+                "value": "REJ",
+                "condition": {
+                  "operator": "==",
+                  "params": [{ "xpath": "TransactionType" }, "Termination"]
+                }
+              }
+            ]
+          },
+          {
+            "name": "HLLoop1",
+            "attributes": [{ "name": "type", "value": "Loop" }],
+            "children": [
+              {
+                "name": "HL",
+                "attributes": [{ "name": "type", "value": "Segment" }],
+                "children": [
+                  { "name": "HL01", "value": { "xpath": "﻿HLID" } },
+                  {
+                    "name": "HL02",
+                    "attributes": [{ "name": "xsi:nil", "value": "true" }],
+                    "value": { "xpath": "﻿HLParentID" }
+                  },
+                  { "name": "HL03", "value": "O" }
+                ]
+              },
+              {
+                "name": "PRF",
+                "attributes": [{ "name": "type", "value": "Segment" }],
+                "children": [
+                  {
+                    "name": "PRF01",
+                    "value": { "xpath": "PurchaseOrderNumber" }
+                  },
+                  {
+                    "name": "PRF02",
+                    "attributes": [{ "name": "xsi:nil", "value": "true" }],
+                    "value": ""
+                  },
+                  {
+                    "name": "PRF03",
+                    "attributes": [{ "name": "xsi:nil", "value": "true" }],
+                    "value": ""
+                  },
+                  {
+                    "name": "PRF04",
+                    "attributes": [{ "name": "xsi:nil", "value": "true" }],
+                    "value": ""
+                  },
+                  {
+                    "name": "PRF05",
+                    "attributes": [{ "name": "xsi:nil", "value": "true" }],
+                    "value": ""
+                  },
+                  { "name": "PRF06", "value": { "xpath": "ContractNumber" } }
+                ]
+              },
+              {
+                "name": "N1Loop1",
+                "attributes": [{ "name": "type", "value": "Loop" }],
+                "children": [
+                  {
+                    "name": "N1",
+                    "attributes": [{ "name": "type", "value": "Segment" }],
+                    "children": [
+                      { "name": "N101", "value": "SF" },
+                      { "name": "N102", "value": { "xpath": "WarehouseCode" } },
+                      { "name": "N103", "value": "92" },
+                      { "name": "N104", "value": { "xpath": "WarehouseCode" } }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "HLLoop1",
+            "attributes": [{ "name": "type", "value": "Loop" }],
+            "foreach": "asnitem",
+            "children": [
+              {
+                "name": "HL",
+                "attributes": [{ "name": "type", "value": "Segment" }],
+                "children": [
+                  { "name": "HL01", "value": { "xpath": "HLID" } },
+                  {
+                    "name": "HL02",
+                    "attributes": [{ "name": "xsi:nil", "value": "true" }],
+                    "value": { "xpath": "HLParentID" }
+                  },
+                  { "name": "HL03", "value": "I" }
+                ]
+              },
+              {
+                "name": "LIN",
+                "attributes": [{ "name": "type", "value": "Segment" }],
+                "children": [
+                  { "name": "LIN01", "value": { "xpath": "LineNumber" } },
+                  { "name": "LIN02", "value": "SK" },
+                  { "name": "LIN03", "value": { "xpath": "ProductID" } }
+                ]
+              },
+              {
+                "name": "SN1",
+                "attributes": [{ "name": "type", "value": "Segment" }],
+                "children": [
+                  { "name": "SN101", "value": { "xpath": "LineNumber" } },
+                  {
+                    "name": "SN102",
+                    "value": {
+                      "script": "<arc:info title=\"Custom Script\" desc=\"The custom script.\">\n  <input name=\"FilePath\"        desc=\"The sending file path.\" />\n  <input name=\"XPath\"           desc=\"The current xpath in the loop.\" />\n  <input name=\"*\"               desc=\"The information of the current loop.\" />\n</arc:info>\n\n<arc:set attr=\"quantity\" value=\"[xpath('QuantityShipped') | empty(0)]\"/>\n<arc:set attr=\"_meta.linecount\" value=\"[_meta.linecount |def(0) | add]\" />\n<arc:set attr=\"_meta.itemcount\" value=\"[_meta.itemcount |def(0) | add([quantity])]\" />\n\n<arc:set attr=\"result.text\">[quantity]</arc:set>"
+                    }
+                  },
+                  { "name": "SN103", "value": "EA" },
+                  {
+                    "name": "SN104",
+                    "attributes": [{ "name": "xsi:nil", "value": "true" }],
+                    "value": ""
+                  },
+                  { "name": "SN105", "value": { "xpath": "QuantityOrdered" } },
+                  { "name": "SN106", "value": "EA" },
+                  { "name": "SN107", "value": "" },
+                  {
+                    "name": "SN108",
+                    "value": {
+                      "script": "<arc:info title=\"Custom Script\" desc=\"The custom script.\">\n  <input name=\"FilePath\"        desc=\"The sending file path.\" />\n  <input name=\"XPath\"           desc=\"The current xpath in the loop.\" />\n  <input name=\"*\"               desc=\"The information of the current loop.\" />\n</arc:info>\n\n<!-- Getting LineItemStatus value-->\n<arc:set attr=\"data.lineitemstatus\" value=\"[xpath(LineItemStatus)]\"/>\n\n<!--Checking Value of LineItemStatus and Defining the LineItemStatusCode-->\n<arc:select attr=\"data.lineitemstatus\">\n  <arc:case value=\"Item Accepted\">\n    <arc:set attr=\"data.lineitemstatuscode\" value=\"IA\"/>\n  </arc:case>\n  <arc:case value=\"Item Rejected\">\n    <arc:set attr=\"data.lineitemstatuscode\" value=\"IR\"/>\n  </arc:case>\n  <arc:default>\n    <arc:set attr=\"data.lineitemstatuscode\" value=\"IA\"/>\n  </arc:default>\n</arc:select>\n  \n<arc:set attr=\"result.text\">[data.lineitemstatuscode]</arc:set>\""
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "SLN",
+                "condition": {
+                  "operator": "==",
+                  "params": [{ "xpath": "LineItemStatus" }, "Item Rejected"]
+                },
+                "children": [
+                  { "name": "SLN01", "value": { "xpath": "LineNumber" } },
+                  { "name": "SLN02" },
+                  { "name": "SLN03", "value": "D" },
+                  {
+                    "name": "SLN04",
+                    "value": { "xpath": "QuantityCancelled" }
+                  },
+                  { "name": "SLN05", "value": "EA" },
+                  { "name": "SLN06", "value": { "xpath": "UnitPrice" } },
+                  { "name": "SLN07", "value": "NT" },
+                  { "name": "SLN08", "value": "O" }
+                ]
+              },
+              {
+                "name": "MAN",
+                "attributes": [{ "name": "type", "value": "Segment" }],
+                "children": [
+                  { "name": "MAN01", "value": "R" },
+                  { "name": "MAN02", "value": { "xpath": "PackageID" } }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "HLLoop1",
+            "attributes": [{ "name": "type", "value": "Loop" }],
+            "foreach": "asnitem/asnpackage",
+            "children": [
+              {
+                "name": "HL",
+                "attributes": [{ "name": "type", "value": "Segment" }],
+                "children": [
+                  { "name": "HL01", "value": { "xpath": "HLID" } },
+                  {
+                    "name": "HL02",
+                    "attributes": [{ "name": "xsi:nil", "value": "true" }],
+                    "value": ""
+                  },
+                  { "name": "HL03", "value": "P" }
+                ]
+              },
+              {
+                "name": "TD1",
+                "attributes": [{ "name": "type", "value": "Segment" }],
+                "children": [
+                  {
+                    "name": "TD101",
+                    "attributes": [{ "name": "xsi:nil", "value": "true" }],
+                    "value": ""
+                  },
+                  {
+                    "name": "TD102",
+                    "attributes": [{ "name": "xsi:nil", "value": "true" }],
+                    "value": ""
+                  },
+                  { "name": "TD103", "value": "" },
+                  {
+                    "name": "TD104",
+                    "attributes": [{ "name": "xsi:nil", "value": "true" }],
+                    "value": ""
+                  },
+                  {
+                    "name": "TD105",
+                    "attributes": [{ "name": "xsi:nil", "value": "true" }],
+                    "value": ""
+                  },
+                  { "name": "TD106", "value": "Z" },
+                  { "name": "TD107", "value": { "xpath": "WeightofPackage" } },
+                  { "name": "TD108", "value": "LB" }
+                ]
+              },
+              {
+                "name": "TD5",
+                "attributes": [{ "name": "type", "value": "Segment" }],
+                "children": [
+                  { "name": "TD501", "value": "" },
+                  { "name": "TD502", "value": "92" },
+                  { "name": "TD503", "value": { "xpath": "ShippingMethod" } }
+                ]
+              },
+              {
+                "name": "MAN",
+                "attributes": [{ "name": "type", "value": "Segment" }],
+                "children": [
+                  { "name": "MAN01", "value": "R" },
+                  { "name": "MAN02", "value": { "xpath": "PackageID" } },
+                  {
+                    "name": "MAN03",
+                    "value": { "xpath": "ManifestNumberforLTLShipments" }
+                  },
+                  {
+                    "name": "MAN04",
+                    "value": {
+                      "script": "<arc:info title=\"Custom Script\" desc=\"The custom script.\">\n  <input name=\"FilePath\"        desc=\"The sending file path.\" />\n  <input name=\"XPath\"           desc=\"The current xpath in the loop.\" />\n  <input name=\"*\"               desc=\"The information of the current loop.\" />\n</arc:info>\n\n<!-- Getting MarksandNumbersQualifier value-->\n<arc:set attr=\"data.qualifiervalue\" value=\"[xpath(MarksandNumbersQualifier)]\"/>\n\n<!--Checking Value of MarksandNumbersQualifier and Defining the Qualifier-->\n<arc:select attr=\"data.qualifiervalue\">\n  <arc:case value=\"Carrier-Assigned\">\n    <arc:set attr=\"data.qualifier\" value=\"CP\"/>\n  </arc:case>\n  <arc:case value=\"Shipper Assigned\">\n    <arc:set attr=\"data.qualifier\" value=\"SM\"/>\n  </arc:case>\n  <arc:default>\n    <arc:set attr=\"data.qualifier\" value=\"CP\"/>\n  </arc:default>\n</arc:select>\n  \n<arc:set attr=\"result.text\">[data.qualifier]</arc:set>\""
+                    }
+                  },
+                  { "name": "MAN05", "value": { "xpath": "TrackingID" } }
+                ]
+              },
+              {
+                "name": "DTM",
+                "attributes": [{ "name": "type", "value": "Segment" }],
+                "children": [
+                  { "name": "DTM01", "value": "ZZZ" },
+                  {
+                    "name": "DTM02",
+                    "value": {
+                      "xpath": "ShippingDate",
+                      "formatters": [
+                        {
+                          "name": "todate",
+                          "arguments": ["yyyyMMdd", "yyyy-MM-ddTHHmmsszz"]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "DTM03",
+                    "value": {
+                      "xpath": "ShippingDate",
+                      "formatters": [
+                        {
+                          "name": "todate",
+                          "arguments": ["HHmm", "yyyy-MM-ddTHHmmsszz"]
+                        }
+                      ]
+                    }
+                  },
+                  { "name": "DTM04", "value": "GM" }
+                ]
+              },
+              {
+                "name": "DTM",
+                "attributes": [{ "name": "type", "value": "Segment" }],
+                "children": [
+                  { "name": "DTM01", "value": "011" },
+                  {
+                    "name": "DTM02",
+                    "value": {
+                      "xpath": "ShipmentManifestedDate",
+                      "formatters": [
+                        {
+                          "name": "todate",
+                          "arguments": ["yyyyMMdd", "yyyy-MM-ddTHHmmsszz"]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "DTM03",
+                    "value": {
+                      "xpath": "ShipmentManifestedDate",
+                      "formatters": [
+                        {
+                          "name": "todate",
+                          "arguments": ["HHmm", "yyyy-MM-ddTHHmmsszz"]
+                        }
+                      ]
+                    }
+                  },
+                  { "name": "DTM04", "value": "GM" }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "CTT",
+            "attributes": [{ "name": "type", "value": "Segment" }],
+            "children": [
+              {
+                "name": "CTT01",
+                "value": { "custom": "[_meta.linecount | def(0)]" }
+              },
+              {
+                "name": "CTT02",
+                "value": { "custom": "[_meta.itemcount | def(0)]" }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
