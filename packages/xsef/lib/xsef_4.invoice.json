@@ -1,0 +1,19 @@
+{
+    "SaveToSentFolder": "true",
+    "IncludeXMLDeclaration": "True",
+    "Destination": "DF810.xml",
+    "RecurseSubDirectories": "False",
+    "OutputFormat": "raw",
+    "LogDebug": "false",
+    "SendToPort": "X12_AmazonDF_Out",
+    "UseConnectionPool": "false",
+    "LogLevel": "Verbose",
+    "workspace": "Default",
+    "XMLStreaming": "false",
+    "LogMessages": "true",
+    "LocalFileScheme": "DF810_%FileNameNoExt%.xml",
+    "PortType": "XMLMap",
+    "MaskSensitive": "true",
+    "AutomationSend": "true",
+    "Source": "connector://MySQL:invoice.xml"
+}

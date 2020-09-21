@@ -1,0 +1,220 @@
+<!-- OVERSTOCK.COM FILE  -->
+<!--  xmlns:id="http://www.freighttrust.com/Schemas/registry"  -->
+<TransactionSet>
+  <TX-00401-856 type="TransactionSet">
+    <Meta>
+    <!--Transaction Set Identifier Code-->
+    <ST01>
+      <!--Ship Notice/Manifest-->856</ST01>
+    <!--Transaction Set Control Number-->
+    <ST02>000001081</ST02>
+    </Meta>
+    <BSN type="Segment">
+      <!--Transaction Set Purpose Code-->
+      <BSN01>
+        <!--Original-->00</BSN01>
+      <!--Shipment Identification-->
+      <BSN02>12345</BSN02>
+      <!--Date-->
+      <BSN03>20160121</BSN03>
+      <!--Time-->
+      <BSN04>104010</BSN04>
+      <!--Hierarchical Structure Code-->
+      <BSN05>
+        <!--Shipment, Order, Packaging, Item-->0001</BSN05>
+    </BSN>
+    <HLLoop1 type="Loop">
+      <HL type="Segment">
+        <!--Hierarchical ID Number-->
+        <HL01>1</HL01>
+        <!--Hierarchical Parent ID Number-->
+        <HL02 xsi:nil="true" />
+        <!--Hierarchical Level Code-->
+        <HL03>
+          <!--Shipment-->S</HL03>
+        <HL04></HL04>
+      </HL>
+      <TD1 type="Segment">
+        <!--Packaging Code-->
+        <TD101 xsi:nil="true" />
+        <!--Lading Quantity-->
+        <TD102>1</TD102>
+        <!--Commodity Code Qualifier-->
+        <TD103 />
+        <!--Commodity Code-->
+        <TD104 xsi:nil="true" />
+        <!--Lading Description-->
+        <TD105 xsi:nil="true" />
+        <!--Weight Qualifier-->
+        <TD106>
+          <!--Gross Weight-->G</TD106>
+        <!--Weight-->
+        <TD107>5</TD107>
+        <!--Unit or Basis for Measurement Code-->
+        <TD108>
+          <!--Pound-->LB</TD108>
+      </TD1>
+      <TD5 type="Segment">
+        <!--Routing Sequence Code-->
+        <TD501>
+          <!--Origin Carrier (Air, Motor, or Ocean)-->O</TD501>
+        <!--Identification Code Qualifier-->
+        <TD502>
+          <!--Standard Carrier Alpha Code (SCAC)-->2</TD502>
+        <!--Identification Code-->
+        <TD503>TWO_DAY</TD503>
+        <!--Transportation Method/Type Code-->
+        <TD504 />
+        <!--Routing-->
+        <TD505 xsi:nil="true" />
+        <!--Shipment/Order Status Code-->
+        <TD506>
+          <!--Shipment Complete on (Date)-->CC</TD506>
+        <!--Location Qualifier-->
+        <TD507 />
+        <!--Location Identifier-->
+        <TD508>FEDEX</TD508>
+      </TD5>
+      <REF type="Segment">
+        <!--Reference Identification Qualifier-->
+        <REF01>
+          <!--Master Reference (Link) Number-->WH</REF01>
+        <!--Reference Identification-->
+        <REF02>WarehouseName</REF02>
+      </REF>
+      <REF type="Segment">
+        <!--Reference Identification Qualifier-->
+        <REF01>
+          <!--Run Number-->RN</REF01>
+        <!--Reference Identification-->
+        <REF02>OSTK</REF02>
+      </REF>
+      <DTM type="Segment">
+        <!--Date/Time Qualifier-->
+        <DTM01>
+          <!--Shipped-->011</DTM01>
+        <!--Date-->
+        <DTM02>20160121</DTM02>
+        <DTM03></DTM03>
+        <DTM04></DTM04>
+      </DTM>
+      <N1Loop1 type="Loop">
+        <N1 type="Segment">
+          <!--Entity Identifier Code-->
+          <N101>
+            <!--Ship To-->ST</N101>
+          <!--Name-->
+          <N102>Bala R</N102>
+        </N1>
+        <N3 type="Segment">
+          <!--Address Information-->
+          <N301>1999 Bala Street</N301>
+        </N3>
+        <N4 type="Segment">
+          <!--City Name-->
+          <N401>Ramen</N401>
+          <!--State or Province Code-->
+          <N402>AL</N402>
+          <!--Postal Code-->
+          <N403>96230</N403>
+          <!--Country Code-->
+          <N404>US</N404>
+        </N4>
+      </N1Loop1>
+    </HLLoop1>
+    <HLLoop1 type="Loop">
+      <HL type="Segment">
+        <!--Hierarchical ID Number-->
+        <HL01>2</HL01>
+        <!--Hierarchical Parent ID Number-->
+        <HL02>1</HL02>
+        <!--Hierarchical Level Code-->
+        <HL03>
+          <!--Order-->O</HL03>
+        <HL04></HL04>
+      </HL>
+      <PRF type="Segment">
+        <!--Purchase Order Number-->
+        <PRF01>21317-1</PRF01>
+        <!--Release Number-->
+        <PRF02>121317</PRF02>
+        <!--Change Order Sequence Number-->
+        <PRF03 xsi:nil="true" />
+        <!--Date-->
+        <PRF04>20160121</PRF04>
+        <PRF05></PRF05>
+        <PRF06></PRF06>
+        <PRF07></PRF07>
+      </PRF>
+    </HLLoop1>
+    <HLLoop1 type="Loop">
+      <HL type="Segment">
+        <!--Hierarchical ID Number-->
+        <HL01>3</HL01>
+        <!--Hierarchical Parent ID Number-->
+        <HL02>2</HL02>
+        <!--Hierarchical Level Code-->
+        <HL03>
+          <!--Pack-->P</HL03>
+        <HL04></HL04>
+      </HL>
+      <MAN type="Segment">
+        <!--Marks and Numbers Qualifier-->
+        <MAN01>
+          <!--Carrier-Assigned Package ID Number-->CP</MAN01>
+        <!--Marks and Numbers-->
+        <MAN02>000000000000001</MAN02>
+      </MAN>
+    </HLLoop1>
+    <HLLoop1 type="Loop">
+      <HL type="Segment">
+        <!--Hierarchical ID Number-->
+        <HL01>4</HL01>
+        <!--Hierarchical Parent ID Number-->
+        <HL02>3</HL02>
+        <!--Hierarchical Level Code-->
+        <HL03>
+          <!--Item-->I</HL03>
+        <HL04></HL04>
+      </HL>
+      <LIN type="Segment">
+        <!--Assigned Identification-->
+        <LIN01>1</LIN01>
+        <!--Product/Service ID Qualifier-->
+        <LIN02>
+          <!--Stock Keeping Unit (SKU)-->SK</LIN02>
+        <!--Product/Service ID-->
+        <LIN03>WF-MNT-1050</LIN03>
+        <!--Product/Service ID Qualifier-->
+        <LIN04>
+          <!--Buyer&apos;s Part Number-->BP</LIN04>
+        <!--Product/Service ID-->
+        <LIN05>WF-MNT-1050</LIN05>
+      </LIN>
+      <SN1 type="Segment">
+        <!--Assigned Identification-->
+        <SN101 xsi:nil="true" />
+        <!--Number of Units Shipped-->
+        <SN102>1</SN102>
+        <!--Unit or Basis for Measurement Code-->
+        <SN103>
+          <!--Each-->EA</SN103>
+        <!--Quantity Shipped to Date-->
+        <SN104 xsi:nil="true" />
+        <!--Quantity Ordered-->
+        <SN105 xsi:nil="true" />
+        <!--Unit or Basis for Measurement Code-->
+        <SN106 />
+        <!--Returnable Container Load Make-Up Code-->
+        <SN107 />
+        <!--Line Item Status Code-->
+        <SN108>
+          <!--Item Accepted and Shipped-->AC</SN108>
+      </SN1>
+    </HLLoop1>
+    <CTT type="Segment">
+      <!--Number of Line Items-->
+      <CTT01>1</CTT01>
+    </CTT>
+  </TX-00401-856>
+</TransactionSet>

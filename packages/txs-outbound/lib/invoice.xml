@@ -1,0 +1,39 @@
+<!--
+NOTE: The following attributes can be included in the table XML:
+selectQuery="SELECT * FROM XXX" - This can be used to specify a custom query to execute for this mapping.
+skipProcessedRows="true" - When true, the application will only process rows one time.
+-->
+
+<Items>
+    <invoice selectQuery="SELECT * FROM `invoice` ">
+        <﻿InvoiceID type="long" key="true" />
+        <InvoiceDate type="datetime" />
+    <InvoiceNumber />
+    <CurrencyName />
+        <RemittingName />
+    <VendorPayeeCode />
+    <RemittingStreet />
+    <RemittingCity />
+    <RemittingState />
+    <RemittingZip />
+    <RemittingCountry />
+        <WarehouseCode />
+    <TermsDueDate type="datetime" />
+        <TermsNetDays />
+    <DescriptionofTerms />
+        <InvoiceTotal type="double" />
+    <SACInfo />
+        <SACAmount type="double" />
+        <invoicelineitems selectQuery="SELECT * FROM `invoicelineitems` WHERE `InvoiceID` = ${﻿InvoiceID}">
+            <﻿InvoiceLineItemID type="long" key="true" />
+      <LineNumber />
+      <QuantityInvoiced type="long" />
+      <UnitPriceofItem type="double" />
+      <ProductId />
+      <ShippingID />
+      <PurchaseOrderNumber />
+            <CustomerOrderNumber />
+            <InvoiceID type="long" />
+        </invoicelineitems>
+    </invoice>
+</Items>

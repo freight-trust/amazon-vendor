@@ -27,5 +27,8 @@
     "husky": "^4.2.5",
     "lerna": "^3.22.1",
     "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "json-safe-parse": "0.0.2"
   }
 }

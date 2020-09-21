@@ -1,0 +1,15 @@
+<!--
+NOTE: The following attributes can be included in the table XML:
+selectQuery="SELECT * FROM XXX" - This can be used to specify a custom query to execute for this mapping.
+skipProcessedRows="true" - When true, the application will only process rows one time.
+-->
+<Items>
+    <items selectQuery="SELECT * FROM `items` ">
+        <ID type="int" key="true" />
+        <InventoryFeedReference />
+        <Date type="datetime" />
+        <WarehouseCode />
+        <ItemID />
+        <QuantityAvailable type="int" />
+    </items>
+</Items>

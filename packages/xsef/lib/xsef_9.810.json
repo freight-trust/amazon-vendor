@@ -1,0 +1,19 @@
+{
+    "LogMessages": "True",
+    "workspace": "Default",
+    "PortType": "XMLMap",
+    "IncludeXMLDeclaration": "True",
+    "Destination": "DF810_810002244.xml",
+    "LogDebug": "false",
+    "Invoices": {
+        "RecurseSubDirectories": "False",
+        "SaveToSentFolder": "true",
+        "OutputFormat": "raw",
+        "MaskSensitive": "true",
+        "AutomationSend": "true",
+        "SendToPort": "X12_Amazon_DF_810",
+        "LogLevel": "Verbose",
+        "LocalFileScheme": "810_%FileName%",
+        "UseConnectionPool": "false"
+    }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "amazon-as2",
+  "version": "0.0.0",
+  "description": "amazon as2 connectivity",
+  "author": "sam <sam@freighttrust.com>",
+  "homepage": "https://github.com/freight-trust/",
+  "license": "MPL-2.0",
+  "main": "lib/amazon-as2.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freight-trust/amazon-vendor.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/freight-trust/amazon-vendor/issues"
+  }
+}

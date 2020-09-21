@@ -1,0 +1,76 @@
+{
+    "ports": [{
+            "id": "XMLMap_856_ASN",
+            "type": "XMLMap",
+            "posX": 1808,
+            "posY": 218
+        },
+        {
+            "id": "XMLMap_855_POAck",
+            "type": "XMLMap",
+            "posX": 1808,
+            "posY": 288
+        },
+        {
+            "id": "MySQL",
+            "type": "MySQL",
+            "posX": 1197.06,
+            "posY": 5.29412
+        },
+        {
+            "id": "XMLMap_850_SalesOrder",
+            "type": "XMLMap",
+            "posX": 629.706,
+            "posY": 5.29412
+        },
+        {
+            "id": "FileMatch_Invoice",
+            "type": "FileMatch",
+            "posX": 1481.29,
+            "posY": 5.29412
+        },
+        {
+            "id": "Copy",
+            "type": "Copy",
+            "posX": 913.059,
+            "posY": 5.29412
+        },
+        {
+            "id": "FileMatch_Items",
+            "type": "FileMatch",
+            "posX": 1475.23,
+            "posY": 145.387
+        },
+        {
+            "id": "X12_AmazonDF_Out",
+            "type": "X12",
+            "posX": 2131.32,
+            "posY": 177.727
+        },
+        {
+            "id": "XMLMap_846_Items",
+            "type": "XMLMap",
+            "posX": 1806,
+            "posY": 145
+        },
+        {
+            "id": "X12_AmazonDF_In",
+            "type": "X12",
+            "posX": 353.25,
+            "posY": 5
+        },
+        {
+            "id": "XMLMap_810_Invoice",
+            "type": "XMLMap",
+            "posX": 1801.75,
+            "posY": 70
+        }
+    ],
+    "views": [{
+        "name": "Default",
+        "zoom": "1",
+        "zoomOrigin": "50% 50%",
+        "posX": 0,
+        "posY": 0
+    }]
+}

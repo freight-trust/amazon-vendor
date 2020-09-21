@@ -1,0 +1,41 @@
+<Items>
+    <salesorder action="upsert">
+        <﻿SalesOrderID type="long" key="true" id="SOID" ref="@@LAST_INSERT_ID"/>
+        <AmazonLocationCode />
+        <AmazonLocationName />
+        <AmazonSiteNumber />
+        <BillingCity />
+        <BillingCountry />
+        <BillingState />
+        <BillingStreet />
+        <BillingZip />
+        <CurrencyType />
+        <CustomerName />
+        <CustomerOrderNumber />
+        <CustomerPhone />
+        <GiftMessage />
+        <OrderDate type="datetime" />
+        <PurchaseOrderNumber />
+        <RequestedDeliveryDate type="datetime" />
+        <RequestedShippingDate type="datetime" />
+        <ShippingAddressType />
+        <ShippingCity />
+        <ShippingCountry />
+        <ShippingMethod />
+        <ShippingName />
+        <ShippingState />
+        <ShippingStreet />
+        <ShippingZip />
+        <TotalPrice type="double" />
+        <WarehouseCode />
+        <salesorderlineitems action="upsert">
+            <﻿LineItemID type="long" key="true"  />
+            <LineNumber />
+            <ProductDescription />
+            <ProductID />
+            <QuantityOrdered type="long" />
+            <SalesOrderID type="long" ref="#SOID"/>
+            <UnitPrice type="double" />
+        </salesorderlineitems>
+    </salesorder>
+</Items>

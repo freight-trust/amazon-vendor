@@ -1,0 +1,202 @@
+<TransactionSet>
+  <TX-00401-856 type="TransactionSet">
+    <Meta>
+    <!--Transaction Set Identifier Code-->
+    <ST01>
+      <!--Ship Notice/Manifest-->856</ST01>
+    <!--Transaction Set Control Number-->
+    <ST02>0001</ST02>
+    </Meta>
+    <BSN type="Segment">
+      <!--Transaction Set Purpose Code-->
+      <BSN01>
+        <!--Original-->00</BSN01>
+      <!--Shipment Identification-->
+      <BSN02>0094105795</BSN02>
+      <!--Date-->
+      <BSN03>20150731</BSN03>
+      <!--Time-->
+      <BSN04>115001</BSN04>
+      <!--Hierarchical Structure Code-->
+      <BSN05>
+        <!--Mutually Defined-->ZZZZ</BSN05>
+      <!--Transaction Type Code-->
+      <BSN06>
+        <!--Shipment Advice-->AS</BSN06>
+      <!--Status Reason Code-->
+      <BSN07>
+        <!--Normal-->NOR</BSN07>
+    </BSN>
+    <HLLoop1 type="Loop">
+      <HL type="Segment">
+        <!--Hierarchical ID Number-->
+        <HL01>1</HL01>
+        <!--Hierarchical Parent ID Number-->
+        <HL02 xsi:nil="true" />
+        <!--Hierarchical Level Code-->
+        <HL03>
+          <!--Order-->O</HL03>
+      </HL>
+      <PRF type="Segment">
+        <!--Purchase Order Number-->
+        <PRF01>DxZ000lWN</PRF01>
+        <!--Release Number-->
+        <PRF02 xsi:nil="true" />
+        <!--Change Order Sequence Number-->
+        <PRF03 xsi:nil="true" />
+        <!--Date-->
+        <PRF04 xsi:nil="true" />
+        <!--Assigned Identification-->
+        <PRF05 xsi:nil="true" />
+        <!--Contract Number-->
+        <PRF06>0011557971</PRF06>
+      </PRF>
+      <N1Loop1 type="Loop">
+        <N1 type="Segment">
+          <!--Entity Identifier Code-->
+          <N101>
+            <!--Ship From-->SF</N101>
+          <!--Name-->
+          <N102>WHSE</N102>
+          <!--Identification Code Qualifier-->
+          <N103>
+            <!--Assigned by Buyer or Buyer&apos;s Agent-->92</N103>
+          <!--Identification Code-->
+          <N104>WHSE</N104>
+        </N1>
+      </N1Loop1>
+    </HLLoop1>
+    <HLLoop1 type="Loop">
+      <HL type="Segment">
+        <!--Hierarchical ID Number-->
+        <HL01>2</HL01>
+        <!--Hierarchical Parent ID Number-->
+        <HL02 xsi:nil="true" />
+        <!--Hierarchical Level Code-->
+        <HL03>
+          <!--Item-->I</HL03>
+      </HL>
+      <LIN type="Segment">
+        <!--Assigned Identification-->
+        <LIN01>1</LIN01>
+        <!--Product/Service ID Qualifier-->
+        <LIN02>
+          <!--Stock Keeping Unit (SKU)-->SK</LIN02>
+        <!--Product/Service ID-->
+        <LIN03>0001075</LIN03>
+      </LIN>
+      <SN1 type="Segment">
+        <!--Assigned Identification-->
+        <SN101>1</SN101>
+        <!--Number of Units Shipped-->
+        <SN102>1</SN102>
+        <!--Unit or Basis for Measurement Code-->
+        <SN103>
+          <!--Each-->EA</SN103>
+        <!--Quantity Shipped to Date-->
+        <SN104 xsi:nil="true" />
+        <!--Quantity Ordered-->
+        <SN105>1</SN105>
+        <!--Unit or Basis for Measurement Code-->
+        <SN106>
+          <!--Each-->EA</SN106>
+        <!--Returnable Container Load Make-Up Code-->
+        <SN107 />
+        <!--Line Item Status Code-->
+        <SN108>
+          <!--Item Accepted-->IA</SN108>
+      </SN1>
+      <MAN type="Segment">
+        <!--Marks and Numbers Qualifier-->
+        <MAN01>
+          <!--Originator Assigned-->R</MAN01>
+        <!--Marks and Numbers-->
+        <MAN02>1</MAN02>
+      </MAN>
+    </HLLoop1>
+    <HLLoop1 type="Loop">
+      <HL type="Segment">
+        <!--Hierarchical ID Number-->
+        <HL01>3</HL01>
+        <!--Hierarchical Parent ID Number-->
+        <HL02 xsi:nil="true" />
+        <!--Hierarchical Level Code-->
+        <HL03>
+          <!--Pack-->P</HL03>
+      </HL>
+      <TD1 type="Segment">
+        <!--Packaging Code-->
+        <TD101 xsi:nil="true" />
+        <!--Lading Quantity-->
+        <TD102 xsi:nil="true" />
+        <!--Commodity Code Qualifier-->
+        <TD103 />
+        <!--Commodity Code-->
+        <TD104 xsi:nil="true" />
+        <!--Lading Description-->
+        <TD105 xsi:nil="true" />
+        <!--Weight Qualifier-->
+        <TD106>
+          <!--Mutually Defined-->Z</TD106>
+        <!--Weight-->
+        <TD107>1.42</TD107>
+        <!--Unit or Basis for Measurement Code-->
+        <TD108>
+          <!--Pound-->LB</TD108>
+      </TD1>
+      <TD5 type="Segment">
+        <!--Routing Sequence Code-->
+        <TD501 />
+        <!--Identification Code Qualifier-->
+        <TD502>
+          <!--Assigned by Buyer or Buyer&apos;s Agent-->92</TD502>
+        <!--Identification Code-->
+        <TD503>UPS_GR_COM</TD503>
+      </TD5>
+      <MAN type="Segment">
+        <!--Marks and Numbers Qualifier-->
+        <MAN01>
+          <!--Originator Assigned-->R</MAN01>
+        <!--Marks and Numbers-->
+        <MAN02>1</MAN02>
+        <!--Marks and Numbers-->
+        <MAN03>07116000179624433</MAN03>
+        <!--Marks and Numbers Qualifier-->
+        <MAN04>
+          <!--Carrier-Assigned Package ID Number-->CP</MAN04>
+        <!--Marks and Numbers-->
+        <MAN05>1Z0000020311137414</MAN05>
+      </MAN>
+      <DTM type="Segment">
+        <!--Date/Time Qualifier-->
+        <DTM01>
+          <!--Mutually Defined-->ZZZ</DTM01>
+        <!--Date-->
+        <DTM02>20150731</DTM02>
+        <!--Time-->
+        <DTM03>1200</DTM03>
+        <!--Time Code-->
+        <DTM04>
+          <!--Greenwich Mean Time-->GM</DTM04>
+      </DTM>
+      <DTM type="Segment">
+        <!--Date/Time Qualifier-->
+        <DTM01>
+          <!--Shipped-->011</DTM01>
+        <!--Date-->
+        <DTM02>20150731</DTM02>
+        <!--Time-->
+        <DTM03>1200</DTM03>
+        <!--Time Code-->
+        <DTM04>
+          <!--Greenwich Mean Time-->GM</DTM04>
+      </DTM>
+    </HLLoop1>
+    <CTT type="Segment">
+      <!--Number of Line Items-->
+      <CTT01>1</CTT01>
+      <!--Hash Total-->
+      <CTT02>3</CTT02>
+    </CTT>
+  </TX-00401-856>
+</TransactionSet>

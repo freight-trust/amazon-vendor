@@ -1,0 +1,19 @@
+{
+    "SaveToSentFolder": "true",
+    "IncludeXMLDeclaration": "True",
+    "Destination": "connector://MySQL:salesorder.xml",
+    "RecurseSubDirectories": "False",
+    "OutputFormat": "raw",
+    "LogDebug": "false",
+    "SendToPort": "Copy",
+    "UseConnectionPool": "false",
+    "LogLevel": "Verbose",
+    "workspace": "Default",
+    "XMLStreaming": "false",
+    "LogMessages": "true",
+    "LocalFileScheme": "SalesOrder_%FileNameNoExt%_%DateFormat:MM-dd-yy-hh-mm-ss%.xml",
+    "PortType": "XMLMap",
+    "MaskSensitive": "true",
+    "AutomationSend": "true",
+    "Source": "DF850.xml"
+}

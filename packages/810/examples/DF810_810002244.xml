@@ -1,0 +1,160 @@
+    <TransactionSet>
+      <TX-00401-810 type="TransactionSet">
+        <Meta>
+          <!--Transaction Set Identifier Code-->
+          <ST01>
+            <!--Invoice-->810</ST01>
+          <!--Transaction Set Control Number-->
+          <ST02>3377</ST02>
+        </Meta>
+        <BIG type="Segment">
+          <!--Date-->
+          <BIG01>20150731</BIG01>
+          <!--Invoice Number-->
+          <BIG02>9009421628</BIG02>
+          <!--Date-->
+          <BIG03>20150731</BIG03>
+          <!--Purchase Order Number-->
+          <BIG04 xsi:nil="true"/>
+          <!--Release Number-->
+          <BIG05 xsi:nil="true"/>
+          <!--Change Order Sequence Number-->
+          <BIG06 xsi:nil="true"/>
+          <!--Transaction Type Code-->
+          <BIG07>
+            <!--Consolidated Invoice-->CI</BIG07>
+        </BIG>
+        <CUR type="Segment">
+          <!--Entity Identifier Code-->
+          <CUR01>
+            <!--Bill-to-Party-->BT</CUR01>
+          <!--Currency Code-->
+          <CUR02>USD</CUR02>
+        </CUR>
+        <N1Loop1 type="Loop">
+          <N1 type="Segment">
+            <!--Entity Identifier Code-->
+            <N101>
+              <!--Remit To-->RI</N101>
+            <!--Name-->
+            <N102>ABC COMPANY</N102>
+            <!--Identification Code Qualifier-->
+            <N103>
+              <!--Assigned by Buyer or Buyer&apos;s Agent-->92</N103>
+            <!--Identification Code-->
+            <N104>ABCD8</N104>
+          </N1>
+          <N2 type="Segment">
+            <!--Name-->
+            <N201>ABC Company</N201>
+          </N2>
+          <N3 type="Segment">
+            <!--Address Information-->
+            <N301>PO BOX 911111</N301>
+          </N3>
+          <N4 type="Segment">
+            <!--City Name-->
+            <N401>DALLAS</N401>
+            <!--State or Province Code-->
+            <N402>TX</N402>
+            <!--Postal Code-->
+            <N403>72345677</N403>
+            <!--Country Code-->
+            <N404>US</N404>
+          </N4>
+        </N1Loop1>
+        <N1Loop1 type="Loop">
+          <N1 type="Segment">
+            <!--Entity Identifier Code-->
+            <N101>
+              <!--Ship From-->SF</N101>
+            <!--Name-->
+            <N102>WHSE</N102>
+            <!--Identification Code Qualifier-->
+            <N103>
+              <!--Assigned by Buyer or Buyer&apos;s Agent-->92</N103>
+            <!--Identification Code-->
+            <N104>WHSE</N104>
+          </N1>
+        </N1Loop1>
+        <ITD type="Segment">
+          <!--Terms Type Code-->
+          <ITD01>
+            <!--Basic-->01</ITD01>
+          <!--Terms Basis Date Code-->
+          <ITD02>
+            <!--Invoice Date-->3</ITD02>
+          <!--Terms Discount Percent-->
+          <ITD03>30</ITD03>
+          <!--Terms Discount Due Date-->
+          <ITD04>20150816</ITD04>
+          <!--Terms Discount Days Due-->
+          <ITD05>30</ITD05>
+          <!--Terms Net Due Date-->
+          <ITD06>600</ITD06>
+          <!--Terms Net Days-->
+          <ITD07>NET 30</ITD07>
+        </ITD>
+        <IT1Loop1 type="Loop">
+          <IT1 type="Segment">
+            <!--Assigned Identification-->
+            <IT101>1</IT101>
+            <!--Quantity Invoiced-->
+            <IT102>1</IT102>
+            <!--Unit or Basis for Measurement Code-->
+            <IT103>
+              <!--Each-->EA</IT103>
+            <!--Unit Price-->
+            <IT104>6.35</IT104>
+            <!--Basis of Unit Price Code-->
+            <IT105>
+              <!--Net-->NT</IT105>
+            <!--Product/Service ID Qualifier-->
+            <IT106>
+              <!--Stock Keeping Unit (SKU)-->SK</IT106>
+            <!--Product/Service ID-->
+            <IT107>18</IT107>
+            <!--Product/Service ID Qualifier-->
+            <IT108>
+              <!--Purchase Order Number-->PO</IT108>
+            <!--Product/Service ID-->
+            <IT109>D00008lpN</IT109>
+            <!--Product/Service ID Qualifier-->
+            <IT110>
+              <!--Vendor&apos;s Order Number-->VO</IT110>
+            <!--Product/Service ID-->
+            <IT111>0011556617</IT111>
+            <!--Product/Service ID Qualifier-->
+            <IT112>
+              <!--Customer Order Number-->ON</IT112>
+            <!--Product/Service ID-->
+            <IT113>000-1111447-6745811</IT113>
+          </IT1>
+          <SACLoop1 type="Loop">
+            <SAC type="Segment">
+              <!--Allowance or Charge Indicator-->
+              <SAC01>C</SAC01>
+              <!--Service, Promotion, Allowance, or Charge Code-->
+              <SAC02>
+                <!--Handling-->D500</SAC02>
+              <!--Agency Qualifier Code-->
+              <SAC03/>
+              <!--Agency Service, Promotion, Allowance, or Charge Code-->
+              <SAC04 xsi:nil="true"/>
+              <!--Amount-->
+              <SAC05>19200</SAC05>
+            </SAC>
+          </SACLoop1>
+        </IT1Loop1>
+        <TDS type="Segment">
+          <!--Amount-->
+          <TDS01>30764</TDS01>
+        </TDS>
+        <CTT type="Segment">
+          <!--Number of Line Items-->
+          <CTT01>48</CTT01>
+          <!--Hash Total-->
+          <CTT02>49</CTT02>
+        </CTT>
+      </TX-00401-810>
+    </TransactionSet>

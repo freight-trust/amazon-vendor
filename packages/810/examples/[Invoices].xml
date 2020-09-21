@@ -1,0 +1,101 @@
+<!--
+NOTE: The following attributes can be included in the table XML:
+selectQuery="SELECT * FROM XXX" - This can be used to specify a custom query to execute for this mapping.
+skipProcessedRows="true" - When true, the application will only process rows one time.
+-->
+
+<Items>
+    <Invoices table="[Invoices]" selectQuery="SELECT * FROM [Invoices] LIMIT 5 OFFSET 0">
+        <Id key="true" />
+        <AllowIPNPayment />
+        <ApplyTaxAfterDiscount />
+        <Balance type="double" />
+        <BillAddr_City />
+        <BillAddr_Country />
+        <BillAddr_CountrySubDivisionCode />
+        <BillAddr_Id />
+        <BillAddr_Lat />
+        <BillAddr_Line1 />
+        <BillAddr_Line2 />
+        <BillAddr_Line3 />
+        <BillAddr_Line4 />
+        <BillAddr_Line5 />
+        <BillAddr_Long />
+        <BillAddr_Note />
+        <BillAddr_PostalCode />
+        <BillEmail_Address />
+        <ClassRef />
+        <ClassRef_Name />
+        <CurrencyRef />
+        <CurrencyRef_Name />
+        <CustomFieldAggregate />
+        <CustomerMemo />
+        <CustomerRef />
+        <CustomerRef_Name />
+        <DeliveryInfo_DeliveryTime type="datetime" />
+        <DeliveryInfo_DeliveryType />
+        <DepartmentRef />
+        <DepartmentRef_Name />
+        <Deposit type="double" />
+        <DepositToAccountRef />
+        <DepositToAccountRef_Name />
+        <DocNumber />
+        <DueDate type="date" />
+        <EmailStatus />
+        <ExchangeRate type="double" />
+        <GlobalTaxCalculation />
+        <HomeTotalAmt type="double" />
+        <LineAggregate aggregate="true" >
+            <LineAggregate>
+                <Row>
+                    <Id>1</Id>
+                    <LineNum>1</LineNum>
+                    <Description>Nanotech armor</Description>
+                    <Amount>30000.00</Amount>
+                    <DetailType>SalesItemLineDetail</DetailType>
+                    <SalesItemLineDetail>
+                        <ItemRef name="Superhero Suit:Mark 50">20</ItemRef>
+                        <ClassRef name="Iron Man Suits">1300000000000504301</ClassRef>
+                        <UnitPrice>15000</UnitPrice>
+                        <Qty>2</Qty>
+                        <TaxCodeRef>NON</TaxCodeRef>
+                    </SalesItemLineDetail>
+                </Row>
+            </LineAggregate>
+        </LineAggregate>
+        <LinkedTxnAggregate />
+        <MetaData_CreateTime type="datetime" />
+        <MetaData_LastUpdatedTime type="datetime" />
+        <PaymentMethodRef />
+        <PaymentMethodRef_Name />
+        <PaymentRefNum />
+        <PrintStatus />
+        <PrivateNote />
+        <SalesTermRef />
+        <SalesTermRef_Name />
+        <ShipAddr_City />
+        <ShipAddr_Country />
+        <ShipAddr_CountrySubDivisionCode />
+        <ShipAddr_Id />
+        <ShipAddr_Lat />
+        <ShipAddr_Line1 />
+        <ShipAddr_Line2 />
+        <ShipAddr_Line3 />
+        <ShipAddr_Line4 />
+        <ShipAddr_Line5 />
+        <ShipAddr_Long />
+        <ShipAddr_Note />
+        <ShipAddr_PostalCode />
+        <ShipDate type="date" />
+        <ShipMethodRef />
+        <ShipMethodRef_Name />
+        <SyncToken />
+        <TotalAmt type="double" />
+        <TrackingNum />
+        <TxnDate type="date" />
+        <TxnStatus />
+        <TxnTaxDetail_TaxLineAggregate />
+        <TxnTaxDetail_TotalTax />
+        <TxnTaxDetail_TxnTaxCodeRef />
+    </Invoices>
+</Items>

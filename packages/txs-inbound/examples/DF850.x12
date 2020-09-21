@@ -1,0 +1,31 @@
+ISA*00*          *00*          *ZZ*AMAZONDS       *ZZ*VENDOR         *190411*1310*U*00401*000000043*1*T*:~
+GS*PO*AMAZONDS*VENDOR*20190411*131004*43*X*004010~
+ST*850*0010~
+BEG*00*DS*TesT0008596**20190411~
+CUR*BT*USA~
+REF*OQ*100-0000000-3091800~
+REF*ST*1~
+DTM*010*20190411*1200*GM~
+DTM*002*20190411*1200*GM~
+N9*ZZ*01~
+MSG*This shipment completes your order.~
+N1*BT*Amazon.com.kydc,Inc.*92*KYDC~
+N1*SF*ABCD*92*ABCD~
+N1*ST*Walter White~
+N2*HEISENBERG~
+N3*3828 Piermont Dr NE~
+N4*Albuquerque*NM*87111*US*CC*US~
+TD5**92*UPS_DOM_3DAY_RES****ZZ*RES~
+N1*LW*Gus Fring~
+N2*Darla Hopkins~
+N3*1213 Jefferson St~
+N4*Albuquerque*NM*87110*US~
+PER*ZZ****TE*1212613979~
+PO1*1*1*EA*6.35*NT*SK*ACC00001***TP*Kitchen*BL*1*ZZ*Amazon.com, LLC~
+CTP**PUR*14.17~
+MSG*Designer Mug with Lid, Red~
+MSG*Happy Birthday, I hope you enjoy your gift!~
+CTT*1*1~
+SE*27*0010~
+GE*1*43~
+IEA*1*000000043~

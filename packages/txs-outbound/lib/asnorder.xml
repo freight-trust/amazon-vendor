@@ -1,0 +1,45 @@
+<!--
+NOTE: The following attributes can be included in the table XML:
+selectQuery="SELECT * FROM XXX" - This can be used to specify a custom query to execute for this mapping.
+skipProcessedRows="true" - When true, the application will only process rows one time.
+-->
+<Items>
+    <asnorder selectQuery="SELECT * FROM `asnorder` ">
+        <ASNOrderID type="long" key="true" />
+        <ShipmentId />
+        <Date type="datetime" />
+        <TransactionType />
+        <HLID />
+        <HLParentID />
+        <PurchaseOrderNumber />
+        <ContractNumber />
+        <WarehouseCode />
+        <asnitem selectQuery="SELECT * FROM `asnitem` WHERE `ASNOrderID` = ${ASNOrderID}">
+            <ASNItemID type="long" key="true" />
+            <ASNOrderID type="long" />
+            <HLID />
+            <HLParentID />
+            <LineNumber />
+            <ProductID />
+            <QuantityShipped type="long" />
+            <QuantityOrdered type="long" />
+            <LineItemStatus />
+            <QuantityCancelled />
+            <UnitPrice type="double" />
+            <PackageID />
+            <asnpackage selectQuery="SELECT * FROM `asnpackage` WHERE `ASNItemID` = ${ASNItemID}">
+                <ASNPackageID type="long" key="true" />
+                <ASNItemID />
+                <HLID />
+                <WeightofPackage type="double" />
+                <ShippingMethod />
+                <PackageID />
+                <ManifestNumberforLTLShipments />
+                <MarksandNumbersQualifier />
+                <TrackingID />
+                <ShippingDate type="datetime" />
+                <ShipmentManifestedDate type="datetime" />
+            </asnpackage>
+        </asnitem>
+    </asnorder>
+</Items>
