@@ -1,377 +1,518 @@
-[{
-	"name": "TransactionSet",
-	"children": [{
-		"name": "TX-00401-810",
-		"attributes": [{
-			"name": "type",
-			"value": "TransactionSet"
-		}],
-		"foreach": "/Items/invoice",
-		"children": [{
-			"name": "Meta",
-			"children": [{
-				"name": "ST01",
-				"value": "810"
-			}, {
-				"name": "ST02",
-				"value": {
-					"custom": "[_index | rjust (4,'0')] "
-				}
-			}]
-		}, {
-			"name": "BIG",
-			"attributes": [{
-				"name": "type",
-				"value": "Segment"
-			}],
-			"children": [{
-				"name": "BIG01",
-				"value": {
-					"xpath": "InvoiceDate",
-					"formatters": [{
-						"name": "todate",
-						"arguments": ["yyyyMMdd", "yyyy-MM-ddTHH:mm:sszz"]
-					}]
-				}
-			}, {
-				"name": "BIG02",
-				"value": {
-					"xpath": "InvoiceNumber"
-				}
-			}, {
-				"name": "BIG03",
-				"value": {
-					"xpath": "InvoiceDate",
-					"formatters": [{
-						"name": "todate",
-						"arguments": ["yyyyMMdd", "yyyy-MM-ddTHH:mm:sszz"]
-					}]
-				}
-			}, {
-				"name": "BIG04",
-				"attributes": [{
-					"name": "xsi:nil",
-					"value": "true"
-				}],
-				"value": ""
-			}, {
-				"name": "BIG05",
-				"attributes": [{
-					"name": "xsi:nil",
-					"value": "true"
-				}],
-				"value": ""
-			}, {
-				"name": "BIG06",
-				"attributes": [{
-					"name": "xsi:nil",
-					"value": "true"
-				}],
-				"value": ""
-			}, {
-				"name": "BIG07",
-				"value": "CI"
-			}]
-		}, {
-			"name": "CUR",
-			"attributes": [{
-				"name": "type",
-				"value": "Segment"
-			}],
-			"children": [{
-				"name": "CUR01",
-				"value": "BT"
-			}, {
-				"name": "CUR02",
-				"value": {
-					"xpath": "CurrencyName"
-				}
-			}]
-		}, {
-			"name": "N1Loop1",
-			"attributes": [{
-				"name": "type",
-				"value": "Loop"
-			}],
-			"children": [{
-				"name": "N1",
-				"attributes": [{
-					"name": "type",
-					"value": "Segment"
-				}],
-				"children": [{
-					"name": "N101",
-					"value": "RI"
-				}, {
-					"name": "N102",
-					"value": {
-						"xpath": "RemittingName"
-					}
-				}, {
-					"name": "N103",
-					"value": "92"
-				}, {
-					"name": "N104",
-					"value": {
-						"xpath": "VendorPayeeCode"
-					}
-				}]
-			}, {
-				"name": "N2",
-				"attributes": [{
-					"name": "type",
-					"value": "Segment"
-				}],
-				"children": [{
-					"name": "N201",
-					"value": {
-						"xpath": "RemittingName"
-					}
-				}]
-			}, {
-				"name": "N3",
-				"attributes": [{
-					"name": "type",
-					"value": "Segment"
-				}],
-				"children": [{
-					"name": "N301",
-					"value": {
-						"xpath": "RemittingStreet"
-					}
-				}]
-			}, {
-				"name": "N4",
-				"attributes": [{
-					"name": "type",
-					"value": "Segment"
-				}],
-				"children": [{
-					"name": "N401",
-					"value": {
-						"xpath": "RemittingCity"
-					}
-				}, {
-					"name": "N402",
-					"value": {
-						"xpath": "RemittingState"
-					}
-				}, {
-					"name": "N403",
-					"value": {
-						"xpath": "RemittingZip"
-					}
-				}, {
-					"name": "N404",
-					"value": {
-						"xpath": "RemittingCountry"
-					}
-				}]
-			}]
-		}, {
-			"name": "N1Loop1",
-			"attributes": [{
-				"name": "type",
-				"value": "Loop"
-			}],
-			"children": [{
-				"name": "N1",
-				"attributes": [{
-					"name": "type",
-					"value": "Segment"
-				}],
-				"children": [{
-					"name": "N101",
-					"value": "SF"
-				}, {
-					"name": "N102",
-					"value": {
-						"xpath": "WarehouseCode"
-					}
-				}, {
-					"name": "N103",
-					"value": "92"
-				}, {
-					"name": "N104",
-					"value": {
-						"xpath": "WarehouseCode"
-					}
-				}]
-			}]
-		}, {
-			"name": "ITD",
-			"attributes": [{
-				"name": "type",
-				"value": "Segment"
-			}],
-			"children": [{
-				"name": "ITD01",
-				"value": "01"
-			}, {
-				"name": "ITD02",
-				"value": "3"
-			}, {
-				"name": "ITD03"
-			}, {
-				"name": "ITD04"
-			}, {
-				"name": "ITD05"
-			}, {
-				"name": "ITD06",
-				"value": {
-					"xpath": "TermsDueDate",
-					"formatters": [{
-						"name": "todate",
-						"arguments": ["yyyyMMdd", "yyyy-MM-ddTHH:mm:sszz"]
-					}]
-				}
-			}, {
-				"name": "ITD07",
-				"value": {
-					"xpath": "TermsNetDays"
-				}
-			}, {
-				"name": "ITD08"
-			}, {
-				"name": "ITD09",
-				"value": ""
-			}, {
-				"name": "ITD10"
-			}, {
-				"name": "ITD11",
-				"value": ""
-			}, {
-				"name": "ITD12",
-				"value": {
-					"xpath": "DescriptionofTerms"
-				}
-			}]
-		}, {
-			"name": "IT1Loop1",
-			"children": [{
-				"name": "IT1",
-				"foreach": "invoicelineitems",
-				"children": [{
-					"name": "IT101",
-					"value": {
-						"xpath": "LineNumber"
-					}
-				}, {
-					"name": "IT102",
-					"value": {
-						"script": "<$info title=\"Custom Script\" desc=\"The custom script.\">\n  <input name=\"FilePath\"        desc=\"The sending file path.\" />\n  <input name=\"XPath\"           desc=\"The current xpath in the loop.\" />\n  <input name=\"*\"               desc=\"The information of the current loop.\" />\n</$:info>\n\n\n<$set attr=\"quantity\" value=\"[xpath('QuantityInvoiced')]\"/>\n<$set attr=\"_meta.linecount\" value=\"[_meta.linecount |def(0) | add]\" />\n<$set attr=\"_meta.itemcount\" value=\"[_meta.itemcount |def(0) | add([quantity])]\" />\n\n<$set attr=\"result.text\">[quantity]</$:set>"
-					}
-				}, {
-					"name": "IT103",
-					"value": "EA"
-				}, {
-					"name": "IT104",
-					"value": {
-						"xpath": "UnitPriceofItem"
-					}
-				}, {
-					"name": "IT105",
-					"value": "NT\n"
-				}, {
-					"name": "IT106",
-					"value": "SK"
-				}, {
-					"name": "IT107",
-					"value": {
-						"xpath": "ProductId"
-					}
-				}, {
-					"name": "IT108",
-					"value": "PO"
-				}, {
-					"name": "IT109",
-					"value": {
-						"xpath": "ShippingID"
-					}
-				}, {
-					"name": "IT110",
-					"value": "VO"
-				}, {
-					"name": "IT111",
-					"value": {
-						"xpath": "PurchaseOrderNumber"
-					}
-				}, {
-					"name": "IT112",
-					"value": "ON"
-				}, {
-					"name": "IT113",
-					"value": {
-						"xpath": "CustomerOrderNumber"
-					}
-				}]
-			}, {
-				"name": "SACLoop1",
-				"attributes": [{
-					"name": "type",
-					"value": "Loop"
-				}],
-				"children": [{
-					"name": "SAC",
-					"attributes": [{
-						"name": "type",
-						"value": "Segment"
-					}],
-					"children": [{
-						"name": "SAC01",
-						"value": "C"
-					}, {
-						"name": "SAC02",
-						"value": {
-							"script": "<$info title=\"Custom Script\" desc=\"The custom script.\">\n  <input name=\"FilePath\"        desc=\"The sending file path.\" />\n  <input name=\"XPath\"           desc=\"The current xpath in the loop.\" />\n  <input name=\"*\"               desc=\"The information of the current loop.\" />\n</$:info>\n\n<!-- Getting SACInfo value-->\n<$set attr=\"data.info\" value=\"[xpath(SACInfo)]\"/>\n\n<!--Checking Value of SACInfo and Defining the ServiceCode-->\n<$select attr=\"data.info\">\n  <$case value=\"Crafting\">\n    <$set attr=\"data.servicecode\" value=\"B790\"/>\n  </$:case>\n  <$case value=\"Freight\">\n    <$set attr=\"data.servicecode\" value=\"D240\"/>\n  </$:case>\n  <$case value=\"Handling\">\n    <$set attr=\"data.servicecode\" value=\"D500\"/>\n  </$:case>\n  <$case value=\"Labeling\">\n    <$set attr=\"data.servicecode\" value=\"E170\"/>\n  </$:case>\n  <$case value=\"Packaging\">\n    <$set attr=\"data.servicecode\" value=\"F155\"/>\n  </$:case>\n  <$case value=\"Shipping Charges\">\n    <$set attr=\"data.servicecode\" value=\"G821\"/>\n  </$:case>\n  <$default>\n    <$set attr=\"data.servicecode\" value=\"G821\"/>\n  </$:default>\n</$:select>\n  \n<$set attr=\"result.text\">[data.servicecode]</$:set>"
-						}
-					}, {
-						"name": "SAC03",
-						"value": ""
-					}, {
-						"name": "SAC04",
-						"attributes": [{
-							"name": "xsi:nil",
-							"value": "true"
-						}],
-						"value": ""
-					}, {
-						"name": "SAC05",
-						"value": {
-							"xpath": "SACAmount"
-						}
-					}]
-				}]
-			}]
-		}, {
-			"name": "TDS",
-			"attributes": [{
-				"name": "type",
-				"value": "Segment"
-			}],
-			"children": [{
-				"name": "TDS01",
-				"value": {
-					"xpath": "InvoiceTotal"
-				}
-			}]
-		}, {
-			"name": "CTT",
-			"attributes": [{
-				"name": "type",
-				"value": "Segment"
-			}],
-			"children": [{
-				"name": "CTT01",
-				"value": {
-					"custom": "[_meta.linecount | def(0)]"
-				}
-			}, {
-				"name": "CTT02",
-				"value": {
-					"custom": "[_meta.itemcount | def(0)]"
-				}
-			}]
-		}]
-	}]
-}]
+[
+  {
+    "name": "TransactionSet",
+    "children": [
+      {
+        "name": "TX-00401-810",
+        "attributes": [
+          {
+            "name": "type",
+            "value": "TransactionSet"
+          }
+        ],
+        "foreach": "/Items/invoice",
+        "children": [
+          {
+            "name": "Meta",
+            "children": [
+              {
+                "name": "ST01",
+                "value": "810"
+              },
+              {
+                "name": "ST02",
+                "value": {
+                  "custom": "[_index | rjust (4,'0')] "
+                }
+              }
+            ]
+          },
+          {
+            "name": "BIG",
+            "attributes": [
+              {
+                "name": "type",
+                "value": "Segment"
+              }
+            ],
+            "children": [
+              {
+                "name": "BIG01",
+                "value": {
+                  "xpath": "InvoiceDate",
+                  "formatters": [
+                    {
+                      "name": "todate",
+                      "arguments": ["yyyyMMdd", "yyyy-MM-ddTHH:mm:sszz"]
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "BIG02",
+                "value": {
+                  "xpath": "InvoiceNumber"
+                }
+              },
+              {
+                "name": "BIG03",
+                "value": {
+                  "xpath": "InvoiceDate",
+                  "formatters": [
+                    {
+                      "name": "todate",
+                      "arguments": ["yyyyMMdd", "yyyy-MM-ddTHH:mm:sszz"]
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "BIG04",
+                "attributes": [
+                  {
+                    "name": "xsi:nil",
+                    "value": "true"
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "name": "BIG05",
+                "attributes": [
+                  {
+                    "name": "xsi:nil",
+                    "value": "true"
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "name": "BIG06",
+                "attributes": [
+                  {
+                    "name": "xsi:nil",
+                    "value": "true"
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "name": "BIG07",
+                "value": "CI"
+              }
+            ]
+          },
+          {
+            "name": "CUR",
+            "attributes": [
+              {
+                "name": "type",
+                "value": "Segment"
+              }
+            ],
+            "children": [
+              {
+                "name": "CUR01",
+                "value": "BT"
+              },
+              {
+                "name": "CUR02",
+                "value": {
+                  "xpath": "CurrencyName"
+                }
+              }
+            ]
+          },
+          {
+            "name": "N1Loop1",
+            "attributes": [
+              {
+                "name": "type",
+                "value": "Loop"
+              }
+            ],
+            "children": [
+              {
+                "name": "N1",
+                "attributes": [
+                  {
+                    "name": "type",
+                    "value": "Segment"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "N101",
+                    "value": "RI"
+                  },
+                  {
+                    "name": "N102",
+                    "value": {
+                      "xpath": "RemittingName"
+                    }
+                  },
+                  {
+                    "name": "N103",
+                    "value": "92"
+                  },
+                  {
+                    "name": "N104",
+                    "value": {
+                      "xpath": "VendorPayeeCode"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "N2",
+                "attributes": [
+                  {
+                    "name": "type",
+                    "value": "Segment"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "N201",
+                    "value": {
+                      "xpath": "RemittingName"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "N3",
+                "attributes": [
+                  {
+                    "name": "type",
+                    "value": "Segment"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "N301",
+                    "value": {
+                      "xpath": "RemittingStreet"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "N4",
+                "attributes": [
+                  {
+                    "name": "type",
+                    "value": "Segment"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "N401",
+                    "value": {
+                      "xpath": "RemittingCity"
+                    }
+                  },
+                  {
+                    "name": "N402",
+                    "value": {
+                      "xpath": "RemittingState"
+                    }
+                  },
+                  {
+                    "name": "N403",
+                    "value": {
+                      "xpath": "RemittingZip"
+                    }
+                  },
+                  {
+                    "name": "N404",
+                    "value": {
+                      "xpath": "RemittingCountry"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "N1Loop1",
+            "attributes": [
+              {
+                "name": "type",
+                "value": "Loop"
+              }
+            ],
+            "children": [
+              {
+                "name": "N1",
+                "attributes": [
+                  {
+                    "name": "type",
+                    "value": "Segment"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "N101",
+                    "value": "SF"
+                  },
+                  {
+                    "name": "N102",
+                    "value": {
+                      "xpath": "WarehouseCode"
+                    }
+                  },
+                  {
+                    "name": "N103",
+                    "value": "92"
+                  },
+                  {
+                    "name": "N104",
+                    "value": {
+                      "xpath": "WarehouseCode"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "ITD",
+            "attributes": [
+              {
+                "name": "type",
+                "value": "Segment"
+              }
+            ],
+            "children": [
+              {
+                "name": "ITD01",
+                "value": "01"
+              },
+              {
+                "name": "ITD02",
+                "value": "3"
+              },
+              {
+                "name": "ITD03"
+              },
+              {
+                "name": "ITD04"
+              },
+              {
+                "name": "ITD05"
+              },
+              {
+                "name": "ITD06",
+                "value": {
+                  "xpath": "TermsDueDate",
+                  "formatters": [
+                    {
+                      "name": "todate",
+                      "arguments": ["yyyyMMdd", "yyyy-MM-ddTHH:mm:sszz"]
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "ITD07",
+                "value": {
+                  "xpath": "TermsNetDays"
+                }
+              },
+              {
+                "name": "ITD08"
+              },
+              {
+                "name": "ITD09",
+                "value": ""
+              },
+              {
+                "name": "ITD10"
+              },
+              {
+                "name": "ITD11",
+                "value": ""
+              },
+              {
+                "name": "ITD12",
+                "value": {
+                  "xpath": "DescriptionofTerms"
+                }
+              }
+            ]
+          },
+          {
+            "name": "IT1Loop1",
+            "children": [
+              {
+                "name": "IT1",
+                "foreach": "invoicelineitems",
+                "children": [
+                  {
+                    "name": "IT101",
+                    "value": {
+                      "xpath": "LineNumber"
+                    }
+                  },
+                  {
+                    "name": "IT102",
+                    "value": {
+                      "script": "<$info title=\"Custom Script\" desc=\"The custom script.\">\n  <input name=\"FilePath\"        desc=\"The sending file path.\" />\n  <input name=\"XPath\"           desc=\"The current xpath in the loop.\" />\n  <input name=\"*\"               desc=\"The information of the current loop.\" />\n</$:info>\n\n\n<$set attr=\"quantity\" value=\"[xpath('QuantityInvoiced')]\"/>\n<$set attr=\"_meta.linecount\" value=\"[_meta.linecount |def(0) | add]\" />\n<$set attr=\"_meta.itemcount\" value=\"[_meta.itemcount |def(0) | add([quantity])]\" />\n\n<$set attr=\"result.text\">[quantity]</$:set>"
+                    }
+                  },
+                  {
+                    "name": "IT103",
+                    "value": "EA"
+                  },
+                  {
+                    "name": "IT104",
+                    "value": {
+                      "xpath": "UnitPriceofItem"
+                    }
+                  },
+                  {
+                    "name": "IT105",
+                    "value": "NT\n"
+                  },
+                  {
+                    "name": "IT106",
+                    "value": "SK"
+                  },
+                  {
+                    "name": "IT107",
+                    "value": {
+                      "xpath": "ProductId"
+                    }
+                  },
+                  {
+                    "name": "IT108",
+                    "value": "PO"
+                  },
+                  {
+                    "name": "IT109",
+                    "value": {
+                      "xpath": "ShippingID"
+                    }
+                  },
+                  {
+                    "name": "IT110",
+                    "value": "VO"
+                  },
+                  {
+                    "name": "IT111",
+                    "value": {
+                      "xpath": "PurchaseOrderNumber"
+                    }
+                  },
+                  {
+                    "name": "IT112",
+                    "value": "ON"
+                  },
+                  {
+                    "name": "IT113",
+                    "value": {
+                      "xpath": "CustomerOrderNumber"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "SACLoop1",
+                "attributes": [
+                  {
+                    "name": "type",
+                    "value": "Loop"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "SAC",
+                    "attributes": [
+                      {
+                        "name": "type",
+                        "value": "Segment"
+                      }
+                    ],
+                    "children": [
+                      {
+                        "name": "SAC01",
+                        "value": "C"
+                      },
+                      {
+                        "name": "SAC02",
+                        "value": {
+                          "script": "<$info title=\"Custom Script\" desc=\"The custom script.\">\n  <input name=\"FilePath\"        desc=\"The sending file path.\" />\n  <input name=\"XPath\"           desc=\"The current xpath in the loop.\" />\n  <input name=\"*\"               desc=\"The information of the current loop.\" />\n</$:info>\n\n<!-- Getting SACInfo value-->\n<$set attr=\"data.info\" value=\"[xpath(SACInfo)]\"/>\n\n<!--Checking Value of SACInfo and Defining the ServiceCode-->\n<$select attr=\"data.info\">\n  <$case value=\"Crafting\">\n    <$set attr=\"data.servicecode\" value=\"B790\"/>\n  </$:case>\n  <$case value=\"Freight\">\n    <$set attr=\"data.servicecode\" value=\"D240\"/>\n  </$:case>\n  <$case value=\"Handling\">\n    <$set attr=\"data.servicecode\" value=\"D500\"/>\n  </$:case>\n  <$case value=\"Labeling\">\n    <$set attr=\"data.servicecode\" value=\"E170\"/>\n  </$:case>\n  <$case value=\"Packaging\">\n    <$set attr=\"data.servicecode\" value=\"F155\"/>\n  </$:case>\n  <$case value=\"Shipping Charges\">\n    <$set attr=\"data.servicecode\" value=\"G821\"/>\n  </$:case>\n  <$default>\n    <$set attr=\"data.servicecode\" value=\"G821\"/>\n  </$:default>\n</$:select>\n  \n<$set attr=\"result.text\">[data.servicecode]</$:set>"
+                        }
+                      },
+                      {
+                        "name": "SAC03",
+                        "value": ""
+                      },
+                      {
+                        "name": "SAC04",
+                        "attributes": [
+                          {
+                            "name": "xsi:nil",
+                            "value": "true"
+                          }
+                        ],
+                        "value": ""
+                      },
+                      {
+                        "name": "SAC05",
+                        "value": {
+                          "xpath": "SACAmount"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "TDS",
+            "attributes": [
+              {
+                "name": "type",
+                "value": "Segment"
+              }
+            ],
+            "children": [
+              {
+                "name": "TDS01",
+                "value": {
+                  "xpath": "InvoiceTotal"
+                }
+              }
+            ]
+          },
+          {
+            "name": "CTT",
+            "attributes": [
+              {
+                "name": "type",
+                "value": "Segment"
+              }
+            ],
+            "children": [
+              {
+                "name": "CTT01",
+                "value": {
+                  "custom": "[_meta.linecount | def(0)]"
+                }
+              },
+              {
+                "name": "CTT02",
+                "value": {
+                  "custom": "[_meta.itemcount | def(0)]"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

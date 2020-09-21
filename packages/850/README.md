@@ -8,6 +8,6 @@
 
 `xsef.cfg` - XSEF configuration file
 
-## License 
+## License
 
 MPL-2.0

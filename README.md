@@ -1,6 +1,6 @@
 # Amazon Vendor Central
 
-> EDI and API Service 
+> EDI and API Service
 
 ## Overview
 
@@ -59,7 +59,7 @@ Specify the type of connection you want to use between your back-end systems and
 
 Your choices are:
 AS2
-Amazon-Hosted SFTP 
+Amazon-Hosted SFTP
 Value-Added Network (VAN).
 
 ## Amazon Vendor Central Required EDI Documents
@@ -68,7 +68,7 @@ You can use a number of documents in the Vendor Central portal. These are the mo
 
 #### Invoice EDI 810
 
- Provides all information Amazon needs to pay for the order, including item prices, payment terms, remit to address and so on.
+Provides all information Amazon needs to pay for the order, including item prices, payment terms, remit to address and so on.
 
 #### Inventory EDI 846
 
@@ -92,7 +92,6 @@ X12 EDI 860 Purchase Order Change Request
 X12 EDI 865 Purchase Order Change Request Acknowledgement
 
 **Vendor Central ** will require you to complete a survey to specify each document, and you can test these documents in the Amazon portal.
-
 
 ### Amazon EDI Integration
 
@@ -124,7 +123,6 @@ AS2 workflow engine for direct communication with Amazon
 X12 workflow engine for incoming and outgoing EDI document translation
 CSV, Excel, XML, and JSON workflow engines to auto-generate Amazon EDI documents from business formats and map Amazon EDI documents into usable formats
 Database and application workflow engines to connect Amazon EDI directly to your backend systems
-
 
 ### BPMN Workflow Engine
 
