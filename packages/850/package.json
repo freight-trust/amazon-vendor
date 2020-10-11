@@ -15,5 +15,8 @@
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "undefined": "/Users/sbacha/amazon-vendor/packages/amzn-api-example"
   }
 }

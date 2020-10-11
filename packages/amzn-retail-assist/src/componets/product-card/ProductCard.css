@@ -1,0 +1,37 @@
+@charset "UTF-8";
+.product-card {
+  width: 25%;
+  float: left;
+}
+
+.product-card__image {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin: 3rem auto 1rem auto;
+}
+
+.product-card__name {
+  font-weight: bolder;
+}
+
+.product-card__price:after {
+  content: '€';
+}
+
+.product-card__user {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.product-card__single {
+  border: solid 0.1rem tomato;
+  background: transparent;
+  color: tomato;
+  padding: 0.4rem 2.4rem;
+  margin-bottom: 3rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  display: inline-block;
+}
+/*# sourceMappingURL=ProductCard.css.map */

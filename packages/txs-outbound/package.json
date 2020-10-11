@@ -22,5 +22,8 @@
   },
   "bugs": {
     "url": "https://github.com/freight-trust/amazon-vendor/issues"
+  },
+  "dependencies": {
+    "undefined": "/Users/sbacha/amazon-vendor/packages/amzn-api-example"
   }
 }

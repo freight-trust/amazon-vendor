@@ -1,0 +1,35 @@
+{
+  "name": "amazon-api-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "seeds": "node ./bin/seeds.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cloudinary": "^1.17.0",
+    "connect-mongo": "^3.1.2",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "faker": "^4.1.0",
+    "http-errors": "^1.7.3",
+    "mongoose": "^5.7.7",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "multer-storage-cloudinary": "^2.2.1",
+    "passport": "^0.4.0",
+    "undefined": "/Users/sbacha/amazon-vendor/packages/amzn-api-example"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
