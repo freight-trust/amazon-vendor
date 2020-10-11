@@ -16,7 +16,7 @@
 }
 
 .product-card__price:after {
-  content: "€";
+  content: '€';
 }
 
 .product-card__user {

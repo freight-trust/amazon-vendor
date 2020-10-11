@@ -1,5 +1,5 @@
 {
-  "name": "amazon-api-example",
+  "name": "api-example",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -26,8 +26,7 @@
     "morgan": "^1.9.1",
     "multer": "^1.4.2",
     "multer-storage-cloudinary": "^2.2.1",
-    "passport": "^0.4.0",
-    "undefined": "/Users/sbacha/amazon-vendor/packages/amzn-api-example"
+    "passport": "^0.4.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"

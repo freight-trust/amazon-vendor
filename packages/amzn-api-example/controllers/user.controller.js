@@ -1,34 +1,34 @@
-const createError = require("http-errors");
-const User = require("../models/User.model");
+const createError = require("http-errors")
+const User = require("../models/User.model")
 
 module.exports.login = (req, res, next) => {
-  const { email, password } = req.body;
+  const {email, password} = req.body
   if (!email || !password) {
-    throw createError(400, "Missing credentials");
+    throw createError(400, "Missing credentials")
   }
-  User.findOne({ email })
+  User.findOne({email})
     .then((user) => {
       if (!user) {
-        throw createError(400, "Wrong credentials");
+        throw createError(400, "Wrong credentials")
       } else {
         return user.checkPassword(password).then((match) => {
           if (!match) {
-            throw createError(400, "Wrong credentials");
+            throw createError(400, "Wrong credentials")
           } else {
-            req.session.user = user;
-            res.json(user);
+            req.session.user = user
+            res.json(user)
           }
-        });
+        })
       }
     })
-    .catch((e) => next(e));
-};
+    .catch((e) => next(e))
+}
 
 module.exports.logout = (req, res, next) => {
-  req.session.destroy();
-  res.json({ message: "user logout" });
-  res.status(204).json();
-};
+  req.session.destroy()
+  res.json({message: 'user logout'})
+  res.status(204).json()
+}
 
 module.exports.profile = (req, res, next) => {
   User.findById(req.params.id)
@@ -38,10 +38,10 @@ module.exports.profile = (req, res, next) => {
       path: "reviews",
       populate: {
         path: "product",
-        model: "Product",
+        model: "Product"
       },
     })
     .then((u) => {
-      res.json(u);
-    });
-};
+      res.json(u)
+    })
+}

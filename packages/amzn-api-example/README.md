@@ -1,4 +1,4 @@
-# AmazHAck API
+# amzn-api-example
 
 ## Tasks:
 

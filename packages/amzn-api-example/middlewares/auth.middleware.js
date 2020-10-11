@@ -1,17 +1,17 @@
-const createError = require("http-errors");
+const createError = require('http-errors');
 
 module.exports.isAuthenticated = (req, _, next) => {
   if (req.session.user) {
-    next();
+    next()
   } else {
-    next(createError(401));
+    next(createError(401))
   }
-};
+}
 
 module.exports.isNotAuthenticated = (req, _, next) => {
   if (req.session.user) {
-    next(createError(403));
+    next(createError(403))
   } else {
-    next();
+    next()
   }
-};
+}
