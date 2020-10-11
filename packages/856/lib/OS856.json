@@ -1,514 +1,718 @@
-[{
-	"name": "TransactionSet",
-	"children": [{
-		"name": "TX-00401-856",
-		"attributes": [{
-			"name": "type",
-			"value": "TransactionSet"
-		}],
-		"foreach": "/Items/ASNshipment",
-		"children": [{
-			"name": "Meta",
-			"children": [{
-				"name": "ST01",
-				"value": "856"
-			}, {
-				"name": "ST02",
-				"value": {
-					"custom": "[_index | rjust (4,'0')] "
-				}
-			}]
-		}, {
-			"name": "BSN",
-			"attributes": [{
-				"name": "type",
-				"value": "Segment"
-			}],
-			"children": [{
-				"name": "BSN01",
-				"value": "00"
-			}, {
-				"name": "BSN02",
-				"value": {
-					"xpath": "PackingSlipNumber"
-				}
-			}, {
-				"name": "BSN03",
-				"value": {
-					"xpath": "TransactionSetDate",
-					"formatters": [{
-						"name": "todate",
-						"arguments": ["yyyyMMdd", "yyyy-MM-ddTHH:mm:sszz"]
-					}]
-				}
-			}, {
-				"name": "BSN04",
-				"value": {
-					"xpath": "TransactionSetDate",
-					"formatters": [{
-						"name": "todate",
-						"arguments": ["HHmm", "yyyy-MM-ddTHH:mm:sszz"]
-					}]
-				}
-			}, {
-				"name": "BSN05",
-				"value": "0001"
-			}]
-		}, {
-			"name": "HLLoop1",
-			"attributes": [{
-				"name": "type",
-				"value": "Loop"
-			}],
-			"children": [{
-				"name": "HL",
-				"attributes": [{
-					"name": "type",
-					"value": "Segment"
-				}],
-				"children": [{
-					"name": "HL01",
-					"value": {
-						"xpath": "HLID"
-					}
-				}, {
-					"name": "HL02",
-					"attributes": [{
-						"name": "xsi:nil",
-						"value": "true"
-					}],
-					"value": {
-						"xpath": "HLParentID"
-					}
-				}, {
-					"name": "HL03",
-					"value": "S"
-				}, {
-					"name": "HL04"
-				}]
-			}, {
-				"name": "TD1",
-				"attributes": [{
-					"name": "type",
-					"value": "Segment"
-				}],
-				"children": [{
-					"name": "TD101",
-					"value": {
-						"script": "<info title=\"Custom Script\" desc=\"The custom script.\">\n  <input name=\"FilePath\"        desc=\"The sending file path.\" />\n  <input name=\"XPath\"           desc=\"The current xpath in the loop.\" />\n  <input name=\"*\"               desc=\"The information of the current loop.\" />\n</:info>\n\n<!-- Getting PackingType value-->\n<set attr=\"data.xpath\" value=\"PackingType\"/>\n<set attr=\"data.type\" value=\"[xpath([data.xpath])]\"/>\n\n<!--Checking Value of PackingType and Defining the value of Packing Type Code-->\n<select attr=\"data.type\">\n  <case value=\"Package\">\n    <set attr=\"data.typecode\" value=\"PKG\"/>\n  </:case>\n  <case value=\"Carton\">\n    <set attr=\"data.typecode\" value=\"CTN\"/>\n  <default>\n    <set attr=\"data.typecode\" value=\"Package\"/>\n  </:default>\n</:select>\n  \n<set attr=\"result.text\">[data.typecode]</:set>"
-					}
-				}, {
-					"name": "TD102",
-					"value": {
-						"xpath": "NumberofUnits"
-					}
-				}, {
-					"name": "TD103"
-				}, {
-					"name": "TD104",
-					"attributes": [{
-						"name": "xsi:nil",
-						"value": "true"
-					}]
-				}, {
-					"name": "TD105",
-					"attributes": [{
-						"name": "xsi:nil",
-						"value": "true"
-					}]
-				}, {
-					"name": "TD106",
-					"value": "G"
-				}, {
-					"name": "TD107",
-					"value": {
-						"xpath": "WeightofShipment"
-					}
-				}, {
-					"name": "TD108",
-					"value": "LB"
-				}]
-			}, {
-				"name": "TD5",
-				"attributes": [{
-					"name": "type",
-					"value": "Segment"
-				}],
-				"children": [{
-					"name": "TD501",
-					"value": "O"
-				}, {
-					"name": "TD502",
-					"value": "2"
-				}, {
-					"name": "TD503",
-					"value": {
-						"xpath": "ServiceLevelCode"
-					}
-				}, {
-					"name": "TD504"
-				}, {
-					"name": "TD505",
-					"attributes": [{
-						"name": "xsi:nil",
-						"value": "true"
-					}]
-				}, {
-					"name": "TD506",
-					"value": "CC"
-				}, {
-					"name": "TD507"
-				}, {
-					"name": "TD508",
-					"value": "FEDEX"
-				}]
-			}, {
-				"name": "REF",
-				"attributes": [{
-					"name": "type",
-					"value": "Segment"
-				}],
-				"children": [{
-					"name": "REF01",
-					"value": "WH"
-				}, {
-					"name": "REF02",
-					"value": {
-						"xpath": "WarehouseName"
-					}
-				}]
-			}, {
-				"name": "REF",
-				"attributes": [{
-					"name": "type",
-					"value": "Segment"
-				}],
-				"children": [{
-					"name": "REF01",
-					"value": "RN"
-				}, {
-					"name": "REF02",
-					"value": {
-						"xpath": "RetailerName"
-					}
-				}]
-			}, {
-				"name": "DTM",
-				"attributes": [{
-					"name": "type",
-					"value": "Segment"
-				}],
-				"children": [{
-					"name": "DTM01",
-					"value": "011"
-				}, {
-					"name": "DTM02",
-					"value": {
-						"xpath": "ShippingDate",
-						"formatters": [{
-							"name": "todate",
-							"arguments": ["yyyyMMdd", "yyyy-MM-ddTHH:mm:sszz"]
-						}]
-					}
-				}, {
-					"name": "DTM03",
-					"value": {
-						"xpath": "ShippingDate",
-						"formatters": [{
-							"name": "todate",
-							"arguments": ["HHmm", "yyyy-MM-ddTHH:mm:sszz"]
-						}]
-					}
-				}, {
-					"name": "DTM04"
-				}]
-			}, {
-				"name": "N1Loop1",
-				"attributes": [{
-					"name": "type",
-					"value": "Loop"
-				}],
-				"children": [{
-					"name": "N1",
-					"attributes": [{
-						"name": "type",
-						"value": "Segment"
-					}],
-					"children": [{
-						"name": "N101",
-						"value": "ST"
-					}, {
-						"name": "N102",
-						"value": {
-							"xpath": "ShippingName"
-						}
-					}]
-				}, {
-					"name": "N3",
-					"attributes": [{
-						"name": "type",
-						"value": "Segment"
-					}],
-					"children": [{
-						"name": "N301",
-						"value": {
-							"xpath": "ShippingStreet"
-						}
-					}]
-				}, {
-					"name": "N4",
-					"attributes": [{
-						"name": "type",
-						"value": "Segment"
-					}],
-					"children": [{
-						"name": "N401",
-						"value": {
-							"xpath": "ShippingCity"
-						}
-					}, {
-						"name": "N402",
-						"value": {
-							"xpath": "ShippingState"
-						}
-					}, {
-						"name": "N403",
-						"value": {
-							"xpath": "ShippingZip"
-						}
-					}, {
-						"name": "N404",
-						"value": {
-							"xpath": "ShippingCountry"
-						}
-					}]
-				}]
-			}]
-		}, {
-			"name": "HLLoop1",
-			"attributes": [{
-				"name": "type",
-				"value": "Loop"
-			}],
-			"foreach": "ASNorder",
-			"children": [{
-				"name": "HL",
-				"attributes": [{
-					"name": "type",
-					"value": "Segment"
-				}],
-				"children": [{
-					"name": "HL01",
-					"value": {
-						"xpath": "HLID"
-					}
-				}, {
-					"name": "HL02",
-					"value": {
-						"xpath": "HLParentID"
-					}
-				}, {
-					"name": "HL03",
-					"value": "O"
-				}, {
-					"name": "HL04"
-				}]
-			}, {
-				"name": "PRF",
-				"attributes": [{
-					"name": "type",
-					"value": "Segment"
-				}],
-				"children": [{
-					"name": "PRF01",
-					"value": {
-						"xpath": "SupplierOrderNumber"
-					}
-				}, {
-					"name": "PRF02",
-					"value": {
-						"xpath": "RetailerOrderNumber"
-					}
-				}, {
-					"name": "PRF03",
-					"attributes": [{
-						"name": "xsi:nil",
-						"value": "true"
-					}]
-				}, {
-					"name": "PRF04",
-					"value": {
-						"xpath": "OrderDate",
-						"formatters": [{
-							"name": "todate",
-							"arguments": ["yyyyMMdd", "yyyy-MM-ddTHH:mm:sszz"]
-						}]
-					}
-				}, {
-					"name": "PRF05"
-				}, {
-					"name": "PRF06"
-				}, {
-					"name": "PRF07",
-					"value": "DS"
-				}]
-			}]
-		}, {
-			"name": "HLLoop1",
-			"attributes": [{
-				"name": "type",
-				"value": "Loop"
-			}],
-			"foreach": "ASNorder/ASNpackage",
-			"children": [{
-				"name": "HL",
-				"attributes": [{
-					"name": "type",
-					"value": "Segment"
-				}],
-				"children": [{
-					"name": "HL01",
-					"value": {
-						"xpath": "HLID"
-					}
-				}, {
-					"name": "HL02",
-					"value": {
-						"xpath": "HLParentID"
-					}
-				}, {
-					"name": "HL03",
-					"value": "P"
-				}, {
-					"name": "HL04"
-				}]
-			}, {
-				"name": "MAN",
-				"attributes": [{
-					"name": "type",
-					"value": "Segment"
-				}],
-				"children": [{
-					"name": "MAN01",
-					"value": "CP"
-				}, {
-					"name": "MAN02",
-					"value": {
-						"xpath": "TrackingNumber"
-					}
-				}]
-			}]
-		}, {
-			"name": "HLLoop1",
-			"attributes": [{
-				"name": "type",
-				"value": "Loop"
-			}],
-			"foreach": "ASNorder/ASNpackage/ASNitem",
-			"children": [{
-				"name": "HL",
-				"attributes": [{
-					"name": "type",
-					"value": "Segment"
-				}],
-				"children": [{
-					"name": "HL01",
-					"value": {
-						"xpath": "HLID"
-					}
-				}, {
-					"name": "HL02",
-					"value": {
-						"xpath": "HLParentID"
-					}
-				}, {
-					"name": "HL03",
-					"value": "I"
-				}, {
-					"name": "HL04"
-				}]
-			}, {
-				"name": "LIN",
-				"attributes": [{
-					"name": "type",
-					"value": "Segment"
-				}],
-				"children": [{
-					"name": "LIN01",
-					"value": {
-						"xpath": "LineItemID"
-					}
-				}, {
-					"name": "LIN02",
-					"value": "SK"
-				}, {
-					"name": "LIN03",
-					"value": {
-						"xpath": "SupplierSKUNumber"
-					}
-				}, {
-					"name": "LIN04",
-					"value": "BP"
-				}, {
-					"name": "LIN05"
-				}]
-			}, {
-				"name": "SN1",
-				"attributes": [{
-					"name": "type",
-					"value": "Segment"
-				}],
-				"children": [{
-					"name": "SN101",
-					"attributes": [{
-						"name": "xsi:nil",
-						"value": "true"
-					}]
-				}, {
-					"name": "SN102",
-					"value": {
-						"script": "<info title=\"Custom Script\" desc=\"The custom script.\">\n  <input name=\"FilePath\"        desc=\"The sending file path.\" />\n  <input name=\"XPath\"           desc=\"The current xpath in the loop.\" />\n  <input name=\"*\"               desc=\"The information of the current loop.\" />\n</:info>\n\n<set attr=\"quantity\" value=\"[xpath('QuantityShipped')]\"/>\n<set attr=\"_meta.linecount\" value=\"[_meta.linecount |def(0) | add]\" />\n\n<set attr=\"result.text\">[quantity]</:set>"
-					}
-				}, {
-					"name": "SN103",
-					"value": "EA"
-				}, {
-					"name": "SN104",
-					"attributes": [{
-						"name": "xsi:nil",
-						"value": "true"
-					}]
-				}, {
-					"name": "SN105",
-					"attributes": [{
-						"name": "xsi:nil",
-						"value": "true"
-					}],
-					"value": {
-						"xpath": "QuantityOrdered"
-					}
-				}, {
-					"name": "SN106",
-					"value": "EA"
-				}, {
-					"name": "SN107"
-				}, {
-					"name": "SN108",
-					"value": "AC"
-				}]
-			}]
-		}, {
-			"name": "CTT",
-			"attributes": [{
-				"name": "type",
-				"value": "Segment"
-			}],
-			"children": [{
-				"name": "CTT01",
-				"value": {
-					"custom": "[_meta.linecount | def(0)]"
-				}
-			}]
-		}]
-	}]
-}]
+[
+  {
+    "name": "TransactionSet",
+    "children": [
+      {
+        "name": "TX-00401-856",
+        "attributes": [
+          {
+            "name": "type",
+            "value": "TransactionSet"
+          }
+        ],
+        "foreach": "/Items/ASNshipment",
+        "children": [
+          {
+            "name": "Meta",
+            "children": [
+              {
+                "name": "ST01",
+                "value": "856"
+              },
+              {
+                "name": "ST02",
+                "value": {
+                  "custom": "[_index | rjust (4,'0')] "
+                }
+              }
+            ]
+          },
+          {
+            "name": "BSN",
+            "attributes": [
+              {
+                "name": "type",
+                "value": "Segment"
+              }
+            ],
+            "children": [
+              {
+                "name": "BSN01",
+                "value": "00"
+              },
+              {
+                "name": "BSN02",
+                "value": {
+                  "xpath": "PackingSlipNumber"
+                }
+              },
+              {
+                "name": "BSN03",
+                "value": {
+                  "xpath": "TransactionSetDate",
+                  "formatters": [
+                    {
+                      "name": "todate",
+                      "arguments": ["yyyyMMdd", "yyyy-MM-ddTHH:mm:sszz"]
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "BSN04",
+                "value": {
+                  "xpath": "TransactionSetDate",
+                  "formatters": [
+                    {
+                      "name": "todate",
+                      "arguments": ["HHmm", "yyyy-MM-ddTHH:mm:sszz"]
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "BSN05",
+                "value": "0001"
+              }
+            ]
+          },
+          {
+            "name": "HLLoop1",
+            "attributes": [
+              {
+                "name": "type",
+                "value": "Loop"
+              }
+            ],
+            "children": [
+              {
+                "name": "HL",
+                "attributes": [
+                  {
+                    "name": "type",
+                    "value": "Segment"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "HL01",
+                    "value": {
+                      "xpath": "HLID"
+                    }
+                  },
+                  {
+                    "name": "HL02",
+                    "attributes": [
+                      {
+                        "name": "xsi:nil",
+                        "value": "true"
+                      }
+                    ],
+                    "value": {
+                      "xpath": "HLParentID"
+                    }
+                  },
+                  {
+                    "name": "HL03",
+                    "value": "S"
+                  },
+                  {
+                    "name": "HL04"
+                  }
+                ]
+              },
+              {
+                "name": "TD1",
+                "attributes": [
+                  {
+                    "name": "type",
+                    "value": "Segment"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "TD101",
+                    "value": {
+                      "script": "<info title=\"Custom Script\" desc=\"The custom script.\">\n  <input name=\"FilePath\"        desc=\"The sending file path.\" />\n  <input name=\"XPath\"           desc=\"The current xpath in the loop.\" />\n  <input name=\"*\"               desc=\"The information of the current loop.\" />\n</:info>\n\n<!-- Getting PackingType value-->\n<set attr=\"data.xpath\" value=\"PackingType\"/>\n<set attr=\"data.type\" value=\"[xpath([data.xpath])]\"/>\n\n<!--Checking Value of PackingType and Defining the value of Packing Type Code-->\n<select attr=\"data.type\">\n  <case value=\"Package\">\n    <set attr=\"data.typecode\" value=\"PKG\"/>\n  </:case>\n  <case value=\"Carton\">\n    <set attr=\"data.typecode\" value=\"CTN\"/>\n  <default>\n    <set attr=\"data.typecode\" value=\"Package\"/>\n  </:default>\n</:select>\n  \n<set attr=\"result.text\">[data.typecode]</:set>"
+                    }
+                  },
+                  {
+                    "name": "TD102",
+                    "value": {
+                      "xpath": "NumberofUnits"
+                    }
+                  },
+                  {
+                    "name": "TD103"
+                  },
+                  {
+                    "name": "TD104",
+                    "attributes": [
+                      {
+                        "name": "xsi:nil",
+                        "value": "true"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "TD105",
+                    "attributes": [
+                      {
+                        "name": "xsi:nil",
+                        "value": "true"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "TD106",
+                    "value": "G"
+                  },
+                  {
+                    "name": "TD107",
+                    "value": {
+                      "xpath": "WeightofShipment"
+                    }
+                  },
+                  {
+                    "name": "TD108",
+                    "value": "LB"
+                  }
+                ]
+              },
+              {
+                "name": "TD5",
+                "attributes": [
+                  {
+                    "name": "type",
+                    "value": "Segment"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "TD501",
+                    "value": "O"
+                  },
+                  {
+                    "name": "TD502",
+                    "value": "2"
+                  },
+                  {
+                    "name": "TD503",
+                    "value": {
+                      "xpath": "ServiceLevelCode"
+                    }
+                  },
+                  {
+                    "name": "TD504"
+                  },
+                  {
+                    "name": "TD505",
+                    "attributes": [
+                      {
+                        "name": "xsi:nil",
+                        "value": "true"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "TD506",
+                    "value": "CC"
+                  },
+                  {
+                    "name": "TD507"
+                  },
+                  {
+                    "name": "TD508",
+                    "value": "FEDEX"
+                  }
+                ]
+              },
+              {
+                "name": "REF",
+                "attributes": [
+                  {
+                    "name": "type",
+                    "value": "Segment"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "REF01",
+                    "value": "WH"
+                  },
+                  {
+                    "name": "REF02",
+                    "value": {
+                      "xpath": "WarehouseName"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "REF",
+                "attributes": [
+                  {
+                    "name": "type",
+                    "value": "Segment"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "REF01",
+                    "value": "RN"
+                  },
+                  {
+                    "name": "REF02",
+                    "value": {
+                      "xpath": "RetailerName"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "DTM",
+                "attributes": [
+                  {
+                    "name": "type",
+                    "value": "Segment"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "DTM01",
+                    "value": "011"
+                  },
+                  {
+                    "name": "DTM02",
+                    "value": {
+                      "xpath": "ShippingDate",
+                      "formatters": [
+                        {
+                          "name": "todate",
+                          "arguments": ["yyyyMMdd", "yyyy-MM-ddTHH:mm:sszz"]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "DTM03",
+                    "value": {
+                      "xpath": "ShippingDate",
+                      "formatters": [
+                        {
+                          "name": "todate",
+                          "arguments": ["HHmm", "yyyy-MM-ddTHH:mm:sszz"]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "DTM04"
+                  }
+                ]
+              },
+              {
+                "name": "N1Loop1",
+                "attributes": [
+                  {
+                    "name": "type",
+                    "value": "Loop"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "N1",
+                    "attributes": [
+                      {
+                        "name": "type",
+                        "value": "Segment"
+                      }
+                    ],
+                    "children": [
+                      {
+                        "name": "N101",
+                        "value": "ST"
+                      },
+                      {
+                        "name": "N102",
+                        "value": {
+                          "xpath": "ShippingName"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "N3",
+                    "attributes": [
+                      {
+                        "name": "type",
+                        "value": "Segment"
+                      }
+                    ],
+                    "children": [
+                      {
+                        "name": "N301",
+                        "value": {
+                          "xpath": "ShippingStreet"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "N4",
+                    "attributes": [
+                      {
+                        "name": "type",
+                        "value": "Segment"
+                      }
+                    ],
+                    "children": [
+                      {
+                        "name": "N401",
+                        "value": {
+                          "xpath": "ShippingCity"
+                        }
+                      },
+                      {
+                        "name": "N402",
+                        "value": {
+                          "xpath": "ShippingState"
+                        }
+                      },
+                      {
+                        "name": "N403",
+                        "value": {
+                          "xpath": "ShippingZip"
+                        }
+                      },
+                      {
+                        "name": "N404",
+                        "value": {
+                          "xpath": "ShippingCountry"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "HLLoop1",
+            "attributes": [
+              {
+                "name": "type",
+                "value": "Loop"
+              }
+            ],
+            "foreach": "ASNorder",
+            "children": [
+              {
+                "name": "HL",
+                "attributes": [
+                  {
+                    "name": "type",
+                    "value": "Segment"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "HL01",
+                    "value": {
+                      "xpath": "HLID"
+                    }
+                  },
+                  {
+                    "name": "HL02",
+                    "value": {
+                      "xpath": "HLParentID"
+                    }
+                  },
+                  {
+                    "name": "HL03",
+                    "value": "O"
+                  },
+                  {
+                    "name": "HL04"
+                  }
+                ]
+              },
+              {
+                "name": "PRF",
+                "attributes": [
+                  {
+                    "name": "type",
+                    "value": "Segment"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "PRF01",
+                    "value": {
+                      "xpath": "SupplierOrderNumber"
+                    }
+                  },
+                  {
+                    "name": "PRF02",
+                    "value": {
+                      "xpath": "RetailerOrderNumber"
+                    }
+                  },
+                  {
+                    "name": "PRF03",
+                    "attributes": [
+                      {
+                        "name": "xsi:nil",
+                        "value": "true"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "PRF04",
+                    "value": {
+                      "xpath": "OrderDate",
+                      "formatters": [
+                        {
+                          "name": "todate",
+                          "arguments": ["yyyyMMdd", "yyyy-MM-ddTHH:mm:sszz"]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "name": "PRF05"
+                  },
+                  {
+                    "name": "PRF06"
+                  },
+                  {
+                    "name": "PRF07",
+                    "value": "DS"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "HLLoop1",
+            "attributes": [
+              {
+                "name": "type",
+                "value": "Loop"
+              }
+            ],
+            "foreach": "ASNorder/ASNpackage",
+            "children": [
+              {
+                "name": "HL",
+                "attributes": [
+                  {
+                    "name": "type",
+                    "value": "Segment"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "HL01",
+                    "value": {
+                      "xpath": "HLID"
+                    }
+                  },
+                  {
+                    "name": "HL02",
+                    "value": {
+                      "xpath": "HLParentID"
+                    }
+                  },
+                  {
+                    "name": "HL03",
+                    "value": "P"
+                  },
+                  {
+                    "name": "HL04"
+                  }
+                ]
+              },
+              {
+                "name": "MAN",
+                "attributes": [
+                  {
+                    "name": "type",
+                    "value": "Segment"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "MAN01",
+                    "value": "CP"
+                  },
+                  {
+                    "name": "MAN02",
+                    "value": {
+                      "xpath": "TrackingNumber"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "HLLoop1",
+            "attributes": [
+              {
+                "name": "type",
+                "value": "Loop"
+              }
+            ],
+            "foreach": "ASNorder/ASNpackage/ASNitem",
+            "children": [
+              {
+                "name": "HL",
+                "attributes": [
+                  {
+                    "name": "type",
+                    "value": "Segment"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "HL01",
+                    "value": {
+                      "xpath": "HLID"
+                    }
+                  },
+                  {
+                    "name": "HL02",
+                    "value": {
+                      "xpath": "HLParentID"
+                    }
+                  },
+                  {
+                    "name": "HL03",
+                    "value": "I"
+                  },
+                  {
+                    "name": "HL04"
+                  }
+                ]
+              },
+              {
+                "name": "LIN",
+                "attributes": [
+                  {
+                    "name": "type",
+                    "value": "Segment"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "LIN01",
+                    "value": {
+                      "xpath": "LineItemID"
+                    }
+                  },
+                  {
+                    "name": "LIN02",
+                    "value": "SK"
+                  },
+                  {
+                    "name": "LIN03",
+                    "value": {
+                      "xpath": "SupplierSKUNumber"
+                    }
+                  },
+                  {
+                    "name": "LIN04",
+                    "value": "BP"
+                  },
+                  {
+                    "name": "LIN05"
+                  }
+                ]
+              },
+              {
+                "name": "SN1",
+                "attributes": [
+                  {
+                    "name": "type",
+                    "value": "Segment"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "SN101",
+                    "attributes": [
+                      {
+                        "name": "xsi:nil",
+                        "value": "true"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "SN102",
+                    "value": {
+                      "script": "<info title=\"Custom Script\" desc=\"The custom script.\">\n  <input name=\"FilePath\"        desc=\"The sending file path.\" />\n  <input name=\"XPath\"           desc=\"The current xpath in the loop.\" />\n  <input name=\"*\"               desc=\"The information of the current loop.\" />\n</:info>\n\n<set attr=\"quantity\" value=\"[xpath('QuantityShipped')]\"/>\n<set attr=\"_meta.linecount\" value=\"[_meta.linecount |def(0) | add]\" />\n\n<set attr=\"result.text\">[quantity]</:set>"
+                    }
+                  },
+                  {
+                    "name": "SN103",
+                    "value": "EA"
+                  },
+                  {
+                    "name": "SN104",
+                    "attributes": [
+                      {
+                        "name": "xsi:nil",
+                        "value": "true"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "SN105",
+                    "attributes": [
+                      {
+                        "name": "xsi:nil",
+                        "value": "true"
+                      }
+                    ],
+                    "value": {
+                      "xpath": "QuantityOrdered"
+                    }
+                  },
+                  {
+                    "name": "SN106",
+                    "value": "EA"
+                  },
+                  {
+                    "name": "SN107"
+                  },
+                  {
+                    "name": "SN108",
+                    "value": "AC"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "CTT",
+            "attributes": [
+              {
+                "name": "type",
+                "value": "Segment"
+              }
+            ],
+            "children": [
+              {
+                "name": "CTT01",
+                "value": {
+                  "custom": "[_meta.linecount | def(0)]"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

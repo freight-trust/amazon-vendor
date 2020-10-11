@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-const txsOutbound = require('..');
+const txsOutbound = require("..");
 
-describe('txs-outbound', () => {
-    it('needs tests');
+describe("txs-outbound", () => {
+  it("needs tests");
 });

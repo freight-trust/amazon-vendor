@@ -66,15 +66,15 @@ userSchema.methods.checkPassword = function (password) {
 };
 
 userSchema.virtual("reviews", {
-  ref: 'Review',
-  localField: '_id',
-  foreignField: 'user'
+  ref: "Review",
+  localField: "_id",
+  foreignField: "user",
 });
 
 userSchema.virtual("products", {
-  ref: 'Product',
-  localField: '_id',
-  foreignField: 'user'
+  ref: "Product",
+  localField: "_id",
+  foreignField: "user",
 });
 
 const User = mongoose.model("User", userSchema);

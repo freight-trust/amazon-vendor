@@ -18,7 +18,7 @@ Promise.all([User.deleteMany(), Product.deleteMany()])
         password: "1234567890",
         name: faker.name.findName(),
         address: faker.address.streetAddress(),
-        image: faker.image.avatar()
+        image: faker.image.avatar(),
       });
       user
         .save()

@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-const xsef = require('..');
+const xsef = require("..");
 
-describe('xsef', () => {
-    it('needs tests');
+describe("xsef", () => {
+  it("needs tests");
 });

@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-const amazonMysql = require('..');
+const amazonMysql = require("..");
 
-describe('amazon-mysql', () => {
-    it('needs tests');
+describe("amazon-mysql", () => {
+  it("needs tests");
 });

@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-const txsInbound = require('..');
+const txsInbound = require("..");
 
-describe('txs-inbound', () => {
-    it('needs tests');
+describe("txs-inbound", () => {
+  it("needs tests");
 });
